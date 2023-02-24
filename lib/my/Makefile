@@ -6,6 +6,7 @@
 ##
 
 SRC	=   my_strncmp.c \
+		linked_ope.c
 
 OBJ	=	$(SRC:.c=.o)
 
