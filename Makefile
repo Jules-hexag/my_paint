@@ -9,7 +9,9 @@ SRC 	=	src/main.c \
 			src/my_paint.c \
 			src/events/event_management.c \
 			src/window/create_window.c \
-			src/window/frame_loop.c
+			src/window/frame_loop.c \
+			src/menu_bar/create_menu_bar.c \
+			src/menu_bar/create_rect_bar_object.c
 
 TESTS_SRC	=	bonus/tests.c \
 

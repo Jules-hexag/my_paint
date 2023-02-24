@@ -5,15 +5,18 @@
 ** event_management
 */
 
+#include <stdlib.h>
 #include "my_paint.h"
-#include <SFML/Config.h>
-#include <SFML/Graphics/RenderWindow.h>
-#include <SFML/Graphics/Types.h>
 
 void event_management(sfRenderWindow *window)
 {
     sfEvent event;
+    menu_states *menu = malloc(sizeof(menu_states));
+    menu->file_menu = 0;
+    menu->help_menu = 0;
+    create_menu_bar(window, menu);
     while (sfRenderWindow_pollEvent(window, &event)) {
         event.type == sfEvtClosed ? sfRenderWindow_close(window) : 0;
     }
+    free(menu);
 }
