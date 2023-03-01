@@ -10,6 +10,6 @@
 int create_menu_bar(sfRenderWindow *window, menu_states *menu)
 {
     create_bar_rectangle(window);
+    create_dropdowns(window, menu);
     return SUCCESS_RETURN;
 }
-    // create_dropdowns(window, menu);

@@ -8,9 +8,14 @@
 #include <SFML/Graphics/RenderWindow.h>
 #include "my_paint.h"
 
-void frame_loop(sfRenderWindow *window)
+void frame_loop(sfRenderWindow *window, all_dropdowns *dropdowns)
 {
+    menu_states menu = (menu_states) {
+        .file_menu = 0,
+        .help_menu = 0,
+    };
     sfRenderWindow_clear(window, sfBlack);
+    create_menu_bar(window, &menu);
     event_management(window);
     sfRenderWindow_display(window);
 }

@@ -12,7 +12,7 @@ SRC 	=	src/main.c \
 			src/events/event_management.c \
 			src/menu_bar/create_menu_bar.c \
 			src/menu_bar/buttons/create_dropdowns.c \
-			src/menu_bar/create_rect_bar_object.c
+			src/menu_bar/create_rect_objects.c
 
 TESTS_SRC	=	bonus/tests.c \
 
