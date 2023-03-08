@@ -8,7 +8,10 @@
 #ifndef MY_PAINT_H_
     #define MY_PAINT_H_
     #define STANDARD_BUTTON_SIZE {50, 20}
+
+    #include <SFML/Graphics/Types.h>
     #include <SFML/Graphics.h>
+    #include <stdbool.h>
 
 enum {
     SUCCESS_RETURN = 0,
@@ -16,8 +19,8 @@ enum {
 };
 
 typedef struct {
-    int file_menu;
-    int help_menu;
+    bool file_menu;
+    bool help_menu;
 } menu_states;
 
 enum button_state_s {
@@ -27,6 +30,7 @@ enum button_state_s {
     RELEASED,
 };
 typedef struct linked_dropdown_s {
+    sfRectangleShape *sprite;
     sfVector2f size;
     sfVector2f origin;
     char *name;
@@ -43,11 +47,12 @@ typedef struct {
 int my_paint(char **env);
 sfRenderWindow *create_window(char **env);
 void event_management(sfRenderWindow *window);
-void frame_loop(sfRenderWindow *window, all_dropdowns *dropdowns);
+void frame_loop(sfRenderWindow *window, sfRectangleShape *menu_bar, all_dropdowns *dropdowns);
 
 /*    MENU BAR    */
-int create_menu_bar(sfRenderWindow *window, menu_states *menu);
-void create_bar_rectangle(sfRenderWindow *window);
-void create_dropdowns(sfRenderWindow *window, menu_states *menu);
+sfRectangleShape *create_menu_bar(sfRenderWindow *window, menu_states *menu, all_dropdowns *dropdowns);
+sfRectangleShape *create_bar_rectangle(sfRenderWindow *window);
+sfRectangleShape *create_menu_button(linked_dropdown *button);
+void create_dropdowns(menu_states *menu, all_dropdowns *dropdowns);
 
 #endif /* !MY_PAINT_H_ */

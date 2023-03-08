@@ -6,16 +6,16 @@
 */
 
 #include <SFML/Graphics/RenderWindow.h>
+#include <SFML/Graphics/Types.h>
+#include <stdbool.h>
 #include "my_paint.h"
 
-void frame_loop(sfRenderWindow *window, all_dropdowns *dropdowns)
+void frame_loop(sfRenderWindow *window, sfRectangleShape *menu_bar, all_dropdowns *dropdowns)
 {
-    menu_states menu = (menu_states) {
-        .file_menu = 0,
-        .help_menu = 0,
-    };
     sfRenderWindow_clear(window, sfBlack);
-    create_menu_bar(window, &menu);
     event_management(window);
+    sfRenderWindow_drawRectangleShape(window, menu_bar, NULL);
+    sfRenderWindow_drawRectangleShape(window, dropdowns->file_dropdown->sprite, NULL);
+    sfRenderWindow_drawRectangleShape(window, dropdowns->help_dropdown->sprite, NULL);
     sfRenderWindow_display(window);
 }

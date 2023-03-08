@@ -36,6 +36,7 @@ int new_left(linked_dropdown **head, char *name, sfVector2f origin)
         .button_state = NONE,
         .next = *head,
     };
+    new_node->sprite = create_menu_button(new_node),
 
     *head = new_node;
     return 0;

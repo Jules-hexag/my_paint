@@ -6,10 +6,10 @@
 */
 
 #include "my_paint.h"
+#include <SFML/Graphics/Types.h>
 
-int create_menu_bar(sfRenderWindow *window, menu_states *menu)
+sfRectangleShape *create_menu_bar(sfRenderWindow *window, menu_states *menu, all_dropdowns *dropdowns)
 {
-    create_bar_rectangle(window);
-    create_dropdowns(window, menu);
-    return SUCCESS_RETURN;
+    create_dropdowns(menu, dropdowns);
+    return create_bar_rectangle(window);
 }

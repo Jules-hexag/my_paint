@@ -6,19 +6,19 @@
 */
 
 #include "my_paint.h"
+#include <SFML/Graphics/Color.h>
+#include <SFML/Graphics/Types.h>
 
-    // sfColor button_color = {107, 107, 107, 100};
-void create_menu_button(sfRenderWindow *window, linked_dropdown *button)
+sfRectangleShape *create_menu_button(linked_dropdown *button)
 {
     sfRectangleShape *menu_button = sfRectangleShape_create();
-    sfVector2u win_size = sfRenderWindow_getSize(window);
     sfRectangleShape_setSize(menu_button, button->size);
     sfRectangleShape_setOrigin(menu_button, button->origin);
-    sfRectangleShape_setFillColor(menu_button, sfWhite);
-    sfRenderWindow_drawRectangleShape(window, menu_button, NULL);
+    sfRectangleShape_setFillColor(menu_button, (sfColor) {200, 200, 200, 100});
+    return menu_button;
 }
 
-void create_bar_rectangle(sfRenderWindow *window)
+sfRectangleShape *create_bar_rectangle(sfRenderWindow *window)
 {
     sfRectangleShape *menu_bar = sfRectangleShape_create();
     sfVector2u win_size = sfRenderWindow_getSize(window);
@@ -28,5 +28,5 @@ void create_bar_rectangle(sfRenderWindow *window)
     sfRectangleShape_setSize(menu_bar, menu_bar_size);
     sfRectangleShape_setOrigin(menu_bar, (sfVector2f) {0, 0});
     sfRectangleShape_setFillColor(menu_bar, bar_color);
-    sfRenderWindow_drawRectangleShape(window, menu_bar, NULL);
+    return menu_bar;
 }

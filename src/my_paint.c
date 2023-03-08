@@ -7,6 +7,7 @@
 
 #include "my_paint.h"
 #include <SFML/Graphics/RenderWindow.h>
+#include <SFML/Graphics/Types.h>
 #include <stdlib.h>
 
 int my_paint(char **env)
@@ -18,9 +19,14 @@ int my_paint(char **env)
         .file_dropdown = file_dropdown,
         .help_dropdown = help_dropdown,
     };
+    menu_states menu = (menu_states) {
+        .file_menu = false,
+        .help_menu = false,
+    };
     if (!window) return ERROR_RETURN;
+    sfRectangleShape *menu_bar = create_menu_bar(window, &menu, &dropdowns);
     while (sfRenderWindow_isOpen(window)) {
-        frame_loop(window, &dropdowns);
+        frame_loop(window, menu_bar, &dropdowns);
     }
     sfRenderWindow_destroy(window);
     return SUCCESS_RETURN;
