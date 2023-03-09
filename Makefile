@@ -10,6 +10,7 @@ SRC 	=	src/main.c \
 			src/window/frame_loop.c \
 			src/window/create_window.c \
 			src/events/event_management.c \
+			src/events/mouse_events.c \
 			src/menu_bar/create_menu_bar.c \
 			src/menu_bar/buttons/create_dropdowns.c \
 			src/menu_bar/create_rect_objects.c

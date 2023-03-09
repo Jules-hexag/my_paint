@@ -10,6 +10,6 @@
 
 sfRectangleShape *create_menu_bar(sfRenderWindow *window, menu_states *menu, all_dropdowns *dropdowns)
 {
-    create_dropdowns(menu, dropdowns);
+    create_dropdowns(window, menu, dropdowns);
     return create_bar_rectangle(window);
 }

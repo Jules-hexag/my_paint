@@ -25,7 +25,7 @@ int count_elem(linked_dropdown *head)
     return i;
 }
 
-int new_left(linked_dropdown **head, char *name, sfVector2f origin)
+int new_left(sfRenderWindow *window, linked_dropdown **head, char *name, sfVector2f origin)
 {
     linked_dropdown *new_node = malloc(sizeof(linked_dropdown));
     if (!new_node) return ERROR_RETURN;
@@ -36,7 +36,7 @@ int new_left(linked_dropdown **head, char *name, sfVector2f origin)
         .button_state = NONE,
         .next = *head,
     };
-    new_node->sprite = create_menu_button(new_node),
+    new_node->sprite = create_menu_button(window, new_node),
 
     *head = new_node;
     return 0;

@@ -7,8 +7,9 @@
 
 #ifndef MY_PAINT_H_
     #define MY_PAINT_H_
+    #define STANDARD_BUTTON_SIZE {50, 20}
+
     #include <SFML/Graphics/Types.h>
-#define STANDARD_BUTTON_SIZE {50, 20}
     #include <SFML/Graphics.h>
     #include <stdbool.h>
 
@@ -45,13 +46,16 @@ typedef struct {
 /*  SOURCE  */
 int my_paint(char **env);
 sfRenderWindow *create_window(char **env);
-void event_management(sfRenderWindow *window);
-void frame_loop(sfRenderWindow *window, sfRectangleShape *menu_bar, all_dropdowns *dropdowns);
+void event_management(sfRenderWindow *window, menu_states *menu, all_dropdowns *dropdowns);
+void frame_loop(sfRenderWindow *window, sfRectangleShape *menu_bar, menu_states *menu, all_dropdowns *dropdowns);
 
 /*    MENU BAR    */
 sfRectangleShape *create_menu_bar(sfRenderWindow *window, menu_states *menu, all_dropdowns *dropdowns);
 sfRectangleShape *create_bar_rectangle(sfRenderWindow *window);
-sfRectangleShape *create_menu_button(linked_dropdown *button);
-void create_dropdowns(menu_states *menu, all_dropdowns *dropdowns);
+sfRectangleShape *create_menu_button(sfRenderWindow *window, linked_dropdown *button);
+void create_dropdowns(sfRenderWindow *window, menu_states *menu, all_dropdowns *dropdowns);
+
+/*      MOUSE EVENT     */
+int mouse_events(sfRenderWindow *window, menu_states *menu, all_dropdowns *dropdowns);
 
 #endif /* !MY_PAINT_H_ */

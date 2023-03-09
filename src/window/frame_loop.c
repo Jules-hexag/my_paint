@@ -10,10 +10,10 @@
 #include <stdbool.h>
 #include "my_paint.h"
 
-void frame_loop(sfRenderWindow *window, sfRectangleShape *menu_bar, all_dropdowns *dropdowns)
+void frame_loop(sfRenderWindow *window, sfRectangleShape *menu_bar, menu_states *menu, all_dropdowns *dropdowns)
 {
     sfRenderWindow_clear(window, sfBlack);
-    event_management(window);
+    event_management(window, menu, dropdowns);
     sfRenderWindow_drawRectangleShape(window, menu_bar, NULL);
     sfRenderWindow_drawRectangleShape(window, dropdowns->file_dropdown->sprite, NULL);
     sfRenderWindow_drawRectangleShape(window, dropdowns->help_dropdown->sprite, NULL);

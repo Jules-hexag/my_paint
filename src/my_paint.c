@@ -26,7 +26,7 @@ int my_paint(char **env)
     if (!window) return ERROR_RETURN;
     sfRectangleShape *menu_bar = create_menu_bar(window, &menu, &dropdowns);
     while (sfRenderWindow_isOpen(window)) {
-        frame_loop(window, menu_bar, &dropdowns);
+        frame_loop(window, menu_bar, &menu, &dropdowns);
     }
     sfRenderWindow_destroy(window);
     return SUCCESS_RETURN;
