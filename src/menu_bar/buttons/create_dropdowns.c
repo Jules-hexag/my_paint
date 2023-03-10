@@ -12,6 +12,10 @@
 void create_dropdowns(sfRenderWindow *window, menu_states *menu, all_dropdowns *dropdowns)
 {
     (void) menu;
-    new_left(window, &dropdowns->file_dropdown, "file", (sfVector2f) {35, 0});
-    new_left(window, &dropdowns->help_dropdown, "help", (sfVector2f) {87, 0});
+    new_right(window, &dropdowns->file_dropdown, "file", (sfVector2f) {35, 0});
+    new_right(window, &dropdowns->file_dropdown, "open", (sfVector2f) {35, 40});
+    new_right(window, &dropdowns->file_dropdown, "save", (sfVector2f) {35, 60});
+
+    new_right(window, &dropdowns->help_dropdown, "help", (sfVector2f) {80, 0});
+    new_right(window, &dropdowns->help_dropdown, "je sais plus", (sfVector2f) {80, 40});
 }

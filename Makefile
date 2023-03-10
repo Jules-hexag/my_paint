@@ -10,7 +10,8 @@ SRC 	=	src/main.c \
 			src/window/frame_loop.c \
 			src/window/create_window.c \
 			src/events/event_management.c \
-			src/events/mouse_events.c \
+			src/events/mouse_moved_events.c \
+			src/events/mouse_clicked_events.c \
 			src/menu_bar/create_menu_bar.c \
 			src/menu_bar/buttons/create_dropdowns.c \
 			src/menu_bar/create_rect_objects.c
@@ -41,6 +42,7 @@ all : $(NAME)
 
 $(NAME) : $(LIB) $(OBJ)
 	gcc -o $(NAME) $(OBJ) $(CPPFLAGS) $(LDFLAGS) $(LDLIBS)
+	@cp ./include/my_paint.h ./lib/my/
 
 $(TESTS): CFLAGS=$(CFLAGS_TESTS)
 $(TESTS): re $(T_OBJ)

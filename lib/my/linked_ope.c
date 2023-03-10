@@ -8,10 +8,6 @@
 #include <stdlib.h>
 #include "my_paint.h"
 
-/*
-                                    --> --> --> --> -->
-    linked list : head--prev-------------------------------------next--NULL
-*/
 
 int count_elem(linked_dropdown *head)
 {
@@ -37,15 +33,18 @@ int new_left(sfRenderWindow *window, linked_dropdown **head, char *name, sfVecto
         .next = *head,
     };
     new_node->sprite = create_menu_button(window, new_node),
-
     *head = new_node;
     return 0;
 }
 
-int new_right(linked_dropdown **head, char *name, sfVector2f origin)
+/*
+                                    --> --> --> --> -->
+    linked list : head--prev-------------------------------------next--NULL
+*/
+int new_right(sfRenderWindow *window, linked_dropdown **head, char *name, sfVector2f origin)
 {
     linked_dropdown *new_node = malloc(sizeof(linked_dropdown));
-    if (!new_node) return 1;
+    if (!new_node) return ERROR_RETURN;
     *new_node = (linked_dropdown) {
         .size = (sfVector2f) STANDARD_BUTTON_SIZE,
         .origin = origin,
@@ -53,6 +52,7 @@ int new_right(linked_dropdown **head, char *name, sfVector2f origin)
         .button_state = NONE,
         .next = *head,
     };
+    new_node->sprite = create_menu_button(window, new_node),
     new_node->next = NULL;
     linked_dropdown *tmp = *head;
     while (*head != NULL)

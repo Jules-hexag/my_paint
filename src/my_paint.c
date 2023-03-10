@@ -13,8 +13,8 @@
 int my_paint(char **env)
 {
     sfRenderWindow *window = create_window(env);
-    linked_dropdown *file_dropdown = malloc(sizeof(linked_dropdown));
-    linked_dropdown *help_dropdown = malloc(sizeof(linked_dropdown));
+    linked_dropdown *file_dropdown = NULL;
+    linked_dropdown *help_dropdown = NULL;
     all_dropdowns dropdowns = (all_dropdowns) {
         .file_dropdown = file_dropdown,
         .help_dropdown = help_dropdown,

@@ -16,7 +16,15 @@ void event_management(sfRenderWindow *window, menu_states *menu, all_dropdowns *
     while (sfRenderWindow_pollEvent(window, &event)) {
         event.type == sfEvtClosed ? sfRenderWindow_close(window) : 0;
         if (event.type == sfEvtMouseMoved) {
-            mouse_events(window, menu, dropdowns);
+            mouse_moved_events(window, menu, dropdowns);
+        }
+        if (event.type == sfEvtMouseButtonPressed) {
+            mouse_clicked_events(window, menu, dropdowns);
         }
     }
 }
+
+/*  Faire l'évènement de quand la souris clique et si c'est sur un dropdown : menu->associé = true.
+    l'affichage devrait se faire tout seul par la suite, pareil pour le surlignagne (pourquoi ? c'est encore à comprendre)
+    Il y a juste un problème : les boucles ne font s'afficher que le dernier bouton du dropdown...à voir
+*/

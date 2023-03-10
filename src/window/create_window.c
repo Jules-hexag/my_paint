@@ -24,7 +24,7 @@ sfRenderWindow *create_window(char **env)
 {
     if (display_mode(env)) return NULL;
     const char title[] = "Fenêtre";
-    sfVideoMode mode = {800, 600, 32};
+    sfVideoMode mode = {1600, 900, 32};
     sfRenderWindow *window;
 
     window = sfRenderWindow_create(mode, title, sfResize | sfClose, NULL);

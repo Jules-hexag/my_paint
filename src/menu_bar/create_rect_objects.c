@@ -14,8 +14,8 @@
 sfRectangleShape *create_menu_button(sfRenderWindow *window, linked_dropdown *button)
 {
     sfRectangleShape *menu_button = sfRectangleShape_create();
-    sfRectangleShape_setSize(menu_button, button->size);
     sfRectangleShape_setPosition(menu_button, sfRenderWindow_mapPixelToCoords(window, (sfVector2i) {button->origin.x, button->origin.y}, NULL));
+    sfRectangleShape_setSize(menu_button, button->size);
     sfRectangleShape_setFillColor(menu_button, (sfColor) {200, 200, 200, 100});
     return menu_button;
 }

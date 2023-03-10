@@ -33,12 +33,11 @@ static void help_button(all_dropdowns *dropdowns, sfVector2f pos_mouse)
     }
 }
 
-int mouse_events(sfRenderWindow *window, menu_states *menu, all_dropdowns *dropdowns)
+void mouse_moved_events(sfRenderWindow *window, menu_states *menu, all_dropdowns *dropdowns)
 {
     (void) menu;
     sfVector2i pos_mouse_pix = sfMouse_getPositionRenderWindow(window);
     sfVector2f pos_mouse = sfRenderWindow_mapPixelToCoords(window, pos_mouse_pix, NULL);
     file_button(dropdowns, pos_mouse);
     help_button(dropdowns, pos_mouse);
-    return 0;
 }

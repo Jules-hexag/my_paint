@@ -56,6 +56,7 @@ sfRectangleShape *create_menu_button(sfRenderWindow *window, linked_dropdown *bu
 void create_dropdowns(sfRenderWindow *window, menu_states *menu, all_dropdowns *dropdowns);
 
 /*      MOUSE EVENT     */
-int mouse_events(sfRenderWindow *window, menu_states *menu, all_dropdowns *dropdowns);
+void mouse_moved_events(sfRenderWindow *window, menu_states *menu, all_dropdowns *dropdowns);
+void mouse_clicked_events(sfRenderWindow *window, menu_states *menu, all_dropdowns *dropdowns);
 
 #endif /* !MY_PAINT_H_ */
