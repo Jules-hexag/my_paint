@@ -19,15 +19,13 @@ void frame_loop(sfRenderWindow *window, sfRectangleShape *menu_bar, menu_states 
     sfRenderWindow_drawRectangleShape(window, dropdowns->file_dropdown->sprite, NULL);
     sfRenderWindow_drawRectangleShape(window, dropdowns->help_dropdown->sprite, NULL);
 
-    while (menu->file_menu && dropdowns->file_dropdown->next != NULL) {
-        dropdowns->file_dropdown = dropdowns->file_dropdown->next;
-        sfRenderWindow_drawRectangleShape(window, dropdowns->file_dropdown->sprite, NULL);
+    if (menu->file_menu) {
+        sfRenderWindow_drawRectangleShape(window, dropdowns->file_dropdown->next->sprite, NULL);
+        sfRenderWindow_drawRectangleShape(window, dropdowns->file_dropdown->next->next->sprite, NULL);
     }
 
-    while (menu->help_menu && dropdowns->help_dropdown->next != NULL) {
-        dropdowns->help_dropdown = dropdowns->help_dropdown->next;
-        sfRenderWindow_drawRectangleShape(window, dropdowns->help_dropdown->sprite, NULL);
-    }
+    if (menu->help_menu)
+        sfRenderWindow_drawRectangleShape(window, dropdowns->help_dropdown->next->sprite, NULL);
 
     sfRenderWindow_display(window);
 }
