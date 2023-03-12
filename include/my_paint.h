@@ -53,6 +53,12 @@ void event_management(sfRenderWindow *window, menu_states *menu,
 void frame_loop(sfRenderWindow *window, sfRectangleShape *menu_bar,
     menu_states *menu, all_dropdowns *dropdowns);
 
+/*  DRAW ELEMENTS   */
+void draw_hidden_dropdowns_buttons(menu_states *menu, sfRenderWindow *window,
+    all_dropdowns *dropdowns);
+void draw_permanent_dropdowns_elem(sfRenderWindow *window,
+    sfRectangleShape *menu_bar, all_dropdowns *dropdowns);
+
 /*    MENU BAR    */
 sfRectangleShape *create_menu_bar(sfRenderWindow *window, menu_states *menu,
     all_dropdowns *dropdowns);

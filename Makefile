@@ -9,13 +9,14 @@ SRC 	=	src/main.c \
 			src/my_paint.c \
 			src/window/frame_loop.c \
 			src/window/create_window.c \
+			src/window/draw/draw_menus.c \
 			src/events/event_management.c \
 			src/menu_bar/create_menu_bar.c \
 			src/menu_bar/create_rect_objects.c \
-			src/buttons/mouse_moved_menu_events.c \
-			src/buttons/mouse_clicked_menu_events.c \
+			src/menu/mouse_moved_menu_events.c \
+			src/menu/mouse_clicked_menu_events.c \
 			src/menu_bar/buttons/create_dropdowns.c \
-			src/buttons/check_dropdowns_click_coords.c
+			src/menu/check_dropdowns_click_coords.c
 
 TESTS_SRC	=	bonus/tests.c \
 
