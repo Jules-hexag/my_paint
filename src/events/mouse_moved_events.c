@@ -11,25 +11,25 @@
 #include <stdlib.h>
 #include "my_paint.h"
 
-static void file_button(all_dropdowns *dropdowns, sfVector2f pos_mouse)
+static void file_button(linked_dropdown *file_dropdown, sfVector2f pos_mouse)
 {
-    if ((pos_mouse.x > dropdowns->file_dropdown->origin.x && pos_mouse.x < (dropdowns->file_dropdown->origin.x + dropdowns->file_dropdown->size.x)) && (pos_mouse.y > dropdowns->file_dropdown->origin.y && pos_mouse.y < (dropdowns->file_dropdown->origin.y + dropdowns->file_dropdown->size.y))) {
-        dropdowns->file_dropdown->button_state = HOVER;
-        sfRectangleShape_setFillColor(dropdowns->file_dropdown->sprite, (sfColor) {250, 20, 102, 100});
+    if ((pos_mouse.x > file_dropdown->origin.x && pos_mouse.x < (file_dropdown->origin.x + file_dropdown->size.x)) && (pos_mouse.y > file_dropdown->origin.y && pos_mouse.y < (file_dropdown->origin.y + file_dropdown->size.y))) {
+        file_dropdown->button_state = HOVER;
+        sfRectangleShape_setFillColor(file_dropdown->sprite, (sfColor) {250, 20, 102, 100});
     } else {
-        dropdowns->file_dropdown->button_state = NONE;
-        sfRectangleShape_setFillColor(dropdowns->file_dropdown->sprite, (sfColor) {200, 200, 200, 100});
+        file_dropdown->button_state = NONE;
+        sfRectangleShape_setFillColor(file_dropdown->sprite, (sfColor) {200, 200, 200, 100});
     }
 }
 
-static void help_button(all_dropdowns *dropdowns, sfVector2f pos_mouse)
+static void help_button(linked_dropdown *help_dropdown, sfVector2f pos_mouse)
 {
-    if ((pos_mouse.x > dropdowns->help_dropdown->origin.x && pos_mouse.x < (dropdowns->help_dropdown->origin.x + dropdowns->help_dropdown->size.x)) && (pos_mouse.y > dropdowns->help_dropdown->origin.y && pos_mouse.y < (dropdowns->help_dropdown->origin.y + dropdowns->help_dropdown->size.y))) {
-        dropdowns->help_dropdown->button_state = HOVER;
-        sfRectangleShape_setFillColor(dropdowns->help_dropdown->sprite, (sfColor) {250, 20, 102, 100});
+    if ((pos_mouse.x > help_dropdown->origin.x && pos_mouse.x < (help_dropdown->origin.x + help_dropdown->size.x)) && (pos_mouse.y > help_dropdown->origin.y && pos_mouse.y < (help_dropdown->origin.y + help_dropdown->size.y))) {
+        help_dropdown->button_state = HOVER;
+        sfRectangleShape_setFillColor(help_dropdown->sprite, (sfColor) {250, 20, 102, 100});
     } else {
-        dropdowns->file_dropdown->button_state = NONE;
-        sfRectangleShape_setFillColor(dropdowns->help_dropdown->sprite, (sfColor) {200, 200, 200, 100});
+        help_dropdown->button_state = NONE;
+        sfRectangleShape_setFillColor(help_dropdown->sprite, (sfColor) {200, 200, 200, 100});
     }
 }
 
@@ -38,6 +38,14 @@ void mouse_moved_events(sfRenderWindow *window, menu_states *menu, all_dropdowns
     (void) menu;
     sfVector2i pos_mouse_pix = sfMouse_getPositionRenderWindow(window);
     sfVector2f pos_mouse = sfRenderWindow_mapPixelToCoords(window, pos_mouse_pix, NULL);
-    file_button(dropdowns, pos_mouse);
-    help_button(dropdowns, pos_mouse);
+    linked_dropdown *tmp_file = dropdowns->file_dropdown;
+    linked_dropdown *tmp_help = dropdowns->help_dropdown;
+    while (tmp_file != NULL) {
+        file_button(tmp_file, pos_mouse);
+        tmp_file = tmp_file->next;
+    }
+    while (tmp_help != NULL) {
+        help_button(tmp_help, pos_mouse);
+        tmp_help = tmp_help->next;
+    }
 }
