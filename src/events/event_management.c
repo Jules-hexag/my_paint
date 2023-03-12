@@ -16,7 +16,8 @@ void event_management(sfRenderWindow *window, menu_states *menu,
     sfEvent event;
     while (sfRenderWindow_pollEvent(window, &event)) {
         event.type == sfEvtClosed ? sfRenderWindow_close(window) : 0;
-        if (event.type == sfEvtMouseMoved) {
+        if (event.type == sfEvtMouseMoved ||
+            event.type == sfEvtMouseButtonReleased) {
             mouse_moved_menu_events(window, menu, dropdowns);
         }
         if (event.type == sfEvtMouseButtonPressed) {
