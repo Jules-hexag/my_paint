@@ -8,7 +8,8 @@
 #include "my_paint.h"
 #include <SFML/Graphics/Types.h>
 
-sfRectangleShape *create_menu_bar(sfRenderWindow *window, menu_states *menu, all_dropdowns *dropdowns)
+sfRectangleShape *create_menu_bar(sfRenderWindow *window, menu_states *menu,
+    all_dropdowns *dropdowns)
 {
     create_dropdowns(window, menu, dropdowns);
     return create_bar_rectangle(window);

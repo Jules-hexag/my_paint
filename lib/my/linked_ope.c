@@ -21,7 +21,8 @@ int count_elem(linked_dropdown *head)
     return i;
 }
 
-int new_left(sfRenderWindow *window, linked_dropdown **head, char *name, sfVector2f origin)
+int new_left(sfRenderWindow *window, linked_dropdown **head, char *name,
+    sfVector2f origin)
 {
     linked_dropdown *new_node = malloc(sizeof(linked_dropdown));
     if (!new_node) return ERROR_RETURN;
@@ -41,7 +42,8 @@ int new_left(sfRenderWindow *window, linked_dropdown **head, char *name, sfVecto
                                     --> --> --> --> -->
     linked list : head--prev-------------------------------------next--NULL
 */
-int new_right(sfRenderWindow *window, linked_dropdown **head, char *name, sfVector2f origin)
+int new_right(sfRenderWindow *window, linked_dropdown **head, char *name,
+    sfVector2f origin)
 {
     linked_dropdown *new_node = malloc(sizeof(linked_dropdown));
     if (!new_node) return ERROR_RETURN;

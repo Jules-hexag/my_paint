@@ -48,17 +48,26 @@ typedef struct {
 /*  SOURCE  */
 int my_paint(char **env);
 sfRenderWindow *create_window(char **env);
-void event_management(sfRenderWindow *window, menu_states *menu, all_dropdowns *dropdowns);
-void frame_loop(sfRenderWindow *window, sfRectangleShape *menu_bar, menu_states *menu, all_dropdowns *dropdowns);
+void event_management(sfRenderWindow *window, menu_states *menu,
+    all_dropdowns *dropdowns);
+void frame_loop(sfRenderWindow *window, sfRectangleShape *menu_bar,
+    menu_states *menu, all_dropdowns *dropdowns);
 
 /*    MENU BAR    */
-sfRectangleShape *create_menu_bar(sfRenderWindow *window, menu_states *menu, all_dropdowns *dropdowns);
+sfRectangleShape *create_menu_bar(sfRenderWindow *window, menu_states *menu,
+    all_dropdowns *dropdowns);
 sfRectangleShape *create_bar_rectangle(sfRenderWindow *window);
-sfRectangleShape *create_menu_button(sfRenderWindow *window, linked_dropdown *button);
-void create_dropdowns(sfRenderWindow *window, menu_states *menu, all_dropdowns *dropdowns);
+sfRectangleShape *create_menu_button(sfRenderWindow *window,
+    linked_dropdown *button);
+void create_dropdowns(sfRenderWindow *window, menu_states *menu,
+    all_dropdowns *dropdowns);
 
 /*      MOUSE EVENT     */
-void mouse_moved_events(sfRenderWindow *window, menu_states *menu, all_dropdowns *dropdowns);
-void mouse_clicked_events(sfRenderWindow *window, menu_states *menu, all_dropdowns *dropdowns);
+void mouse_moved_menu_events(sfRenderWindow *window, menu_states *menu,
+    all_dropdowns *dropdowns);
+void mouse_clicked_menu_events(sfRenderWindow *window, menu_states *menu,
+    all_dropdowns *dropdowns);
+void check_dropdowns_click_coords(sfVector2f pos_mouse, menu_states *menu,
+    all_dropdowns *dropdowns);
 
 #endif /* !MY_PAINT_H_ */

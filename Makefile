@@ -14,7 +14,8 @@ SRC 	=	src/main.c \
 			src/events/mouse_clicked_events.c \
 			src/menu_bar/create_menu_bar.c \
 			src/menu_bar/buttons/create_dropdowns.c \
-			src/menu_bar/create_rect_objects.c
+			src/menu_bar/create_rect_objects.c \
+			src/events/check_dropdowns_click_coords.c
 
 TESTS_SRC	=	bonus/tests.c \
 

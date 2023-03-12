@@ -10,9 +10,8 @@
 #include <SFML/Graphics/Types.h>
 #include <stdlib.h>
 
-int my_paint(char **env)
+static all_dropdowns init_dropdowns(void)
 {
-    sfRenderWindow *window = create_window(env);
     linked_dropdown *file_dropdown = NULL;
     linked_dropdown *help_dropdown = NULL;
     linked_dropdown *edit_dropdown = NULL;
@@ -21,6 +20,13 @@ int my_paint(char **env)
         .edit_dropdown = edit_dropdown,
         .help_dropdown = help_dropdown,
     };
+    return dropdowns;
+}
+
+int my_paint(char **env)
+{
+    sfRenderWindow *window = create_window(env);
+    all_dropdowns dropdowns = init_dropdowns();
     menu_states menu = (menu_states) {
         .file_menu = false,
         .edit_menu = false,

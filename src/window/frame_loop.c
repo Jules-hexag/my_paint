@@ -11,7 +11,8 @@
 #include "my_paint.h"
 #include "my.h"
 
-static void draw_menus(menu_states *menu, sfRenderWindow *window, all_dropdowns *dropdowns)
+static void draw_menus(menu_states *menu, sfRenderWindow *window,
+    all_dropdowns *dropdowns)
 {
     if (menu->file_menu) {
         linked_dropdown *tmp = dropdowns->file_dropdown->next;
@@ -32,18 +33,21 @@ static void draw_menus(menu_states *menu, sfRenderWindow *window, all_dropdowns 
         while (tmp != NULL) {
             sfRenderWindow_drawRectangleShape(window, tmp->sprite, NULL);
             tmp = tmp->next;
-        }
-    }
+        }}
 }
 
-void frame_loop(sfRenderWindow *window, sfRectangleShape *menu_bar, menu_states *menu, all_dropdowns *dropdowns)
+void frame_loop(sfRenderWindow *window, sfRectangleShape *menu_bar,
+    menu_states *menu, all_dropdowns *dropdowns)
 {
     sfRenderWindow_clear(window, sfBlack);
     event_management(window, menu, dropdowns);
     sfRenderWindow_drawRectangleShape(window, menu_bar, NULL);
-    sfRenderWindow_drawRectangleShape(window, dropdowns->file_dropdown->sprite, NULL);
-    sfRenderWindow_drawRectangleShape(window, dropdowns->edit_dropdown->sprite, NULL);
-    sfRenderWindow_drawRectangleShape(window, dropdowns->help_dropdown->sprite, NULL);
+    sfRenderWindow_drawRectangleShape(window, dropdowns->file_dropdown->sprite,
+        NULL);
+    sfRenderWindow_drawRectangleShape(window, dropdowns->edit_dropdown->sprite,
+        NULL);
+    sfRenderWindow_drawRectangleShape(window, dropdowns->help_dropdown->sprite,
+        NULL);
     draw_menus(menu, window, dropdowns);
     sfRenderWindow_display(window);
 }

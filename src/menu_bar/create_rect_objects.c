@@ -11,10 +11,13 @@
 #include <SFML/Graphics/RenderWindow.h>
 #include <SFML/Graphics/Types.h>
 
-sfRectangleShape *create_menu_button(sfRenderWindow *window, linked_dropdown *button)
+sfRectangleShape *create_menu_button(sfRenderWindow *window,
+    linked_dropdown *button)
 {
     sfRectangleShape *menu_button = sfRectangleShape_create();
-    sfRectangleShape_setPosition(menu_button, sfRenderWindow_mapPixelToCoords(window, (sfVector2i) {button->origin.x, button->origin.y}, NULL));
+    sfRectangleShape_setPosition(menu_button,
+        sfRenderWindow_mapPixelToCoords(window,
+        (sfVector2i) {button->origin.x, button->origin.y}, NULL));
     sfRectangleShape_setSize(menu_button, button->size);
     sfRectangleShape_setOutlineThickness(menu_button, (float) 2);
     sfRectangleShape_setOutlineColor(menu_button, sfBlack);
@@ -30,7 +33,9 @@ sfRectangleShape *create_bar_rectangle(sfRenderWindow *window)
     sfVector2f menu_bar_size = {win_width, 20};
     sfColor bar_color = {107, 107, 107, 100};
     sfRectangleShape_setSize(menu_bar, menu_bar_size);
-    sfRectangleShape_setPosition(menu_bar, sfRenderWindow_mapPixelToCoords(window, (sfVector2i) {0, 0}, NULL));
+    sfRectangleShape_setPosition(menu_bar,
+        sfRenderWindow_mapPixelToCoords(window,
+        (sfVector2i) {0, 0}, NULL));
     sfRectangleShape_setFillColor(menu_bar, bar_color);
     return menu_bar;
 }

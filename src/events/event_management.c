@@ -10,16 +10,17 @@
 #include <stdlib.h>
 #include "my_paint.h"
 
-void event_management(sfRenderWindow *window, menu_states *menu, all_dropdowns *dropdowns)
+void event_management(sfRenderWindow *window, menu_states *menu,
+    all_dropdowns *dropdowns)
 {
     sfEvent event;
     while (sfRenderWindow_pollEvent(window, &event)) {
         event.type == sfEvtClosed ? sfRenderWindow_close(window) : 0;
         if (event.type == sfEvtMouseMoved) {
-            mouse_moved_events(window, menu, dropdowns);
+            mouse_moved_menu_events(window, menu, dropdowns);
         }
         if (event.type == sfEvtMouseButtonPressed) {
-            mouse_clicked_events(window, menu, dropdowns);
+            mouse_clicked_menu_events(window, menu, dropdowns);
         }
     }
 }
