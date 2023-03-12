@@ -23,8 +23,3 @@ void event_management(sfRenderWindow *window, menu_states *menu, all_dropdowns *
         }
     }
 }
-
-/*  Faire l'évènement de quand la souris clique et si c'est sur un dropdown : menu->associé = true.
-    l'affichage devrait se faire tout seul par la suite, pareil pour le surlignagne (pourquoi ? c'est encore à comprendre)
-    Il y a juste un problème : les boucles ne font s'afficher que le dernier bouton du dropdown...à voir
-*/

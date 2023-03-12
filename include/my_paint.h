@@ -20,6 +20,7 @@ enum {
 
 typedef struct {
     bool file_menu;
+    bool edit_menu;
     bool help_menu;
 } menu_states;
 
@@ -40,6 +41,7 @@ typedef struct linked_dropdown_s {
 
 typedef struct {
     linked_dropdown *file_dropdown;
+    linked_dropdown *edit_dropdown;
     linked_dropdown *help_dropdown;
 } all_dropdowns;
 

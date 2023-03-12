@@ -17,6 +17,9 @@ void mouse_clicked_events(sfRenderWindow *window, menu_states *menu, all_dropdow
     if ((pos_mouse.x > dropdowns->file_dropdown->origin.x && pos_mouse.x < (dropdowns->file_dropdown->origin.x + dropdowns->file_dropdown->size.x)) && (pos_mouse.y > dropdowns->file_dropdown->origin.y && pos_mouse.y < (dropdowns->file_dropdown->origin.y + dropdowns->file_dropdown->size.y))) {
         !menu->file_menu ? (menu->file_menu = true) : (menu->file_menu = false);
     }
+    if ((pos_mouse.x > dropdowns->edit_dropdown->origin.x && pos_mouse.x < (dropdowns->edit_dropdown->origin.x + dropdowns->edit_dropdown->size.x)) && (pos_mouse.y > dropdowns->edit_dropdown->origin.y && pos_mouse.y < (dropdowns->edit_dropdown->origin.y + dropdowns->edit_dropdown->size.y))) {
+        !menu->edit_menu ? (menu->edit_menu = true) : (menu->edit_menu = false);
+    }
     if ((pos_mouse.x > dropdowns->help_dropdown->origin.x && pos_mouse.x < (dropdowns->help_dropdown->origin.x + dropdowns->help_dropdown->size.x)) && (pos_mouse.y > dropdowns->help_dropdown->origin.y && pos_mouse.y < (dropdowns->help_dropdown->origin.y + dropdowns->help_dropdown->size.y))) {
         !menu->help_menu ? (menu->help_menu = true) : (menu->help_menu = false);
     }

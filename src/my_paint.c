@@ -15,12 +15,15 @@ int my_paint(char **env)
     sfRenderWindow *window = create_window(env);
     linked_dropdown *file_dropdown = NULL;
     linked_dropdown *help_dropdown = NULL;
+    linked_dropdown *edit_dropdown = NULL;
     all_dropdowns dropdowns = (all_dropdowns) {
         .file_dropdown = file_dropdown,
+        .edit_dropdown = edit_dropdown,
         .help_dropdown = help_dropdown,
     };
     menu_states menu = (menu_states) {
         .file_menu = false,
+        .edit_menu = false,
         .help_menu = false,
     };
     if (!window) return ERROR_RETURN;
