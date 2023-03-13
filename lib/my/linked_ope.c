@@ -5,6 +5,10 @@
 ** linked_ope
 */
 
+#include <SFML/Graphics/Color.h>
+#include <SFML/Graphics/Font.h>
+#include <SFML/Graphics/Text.h>
+#include <SFML/System/Vector2.h>
 #include <stdlib.h>
 #include "my_paint.h"
 
@@ -38,6 +42,18 @@ int new_left(sfRenderWindow *window, linked_dropdown **head, char *name,
     return 0;
 }
 
+static sfText *create_text(sfVector2f pos_text, char *text_str)
+{
+    sfText *text = sfText_create();
+    sfFont *font = sfFont_createFromFile("./assets/ELNATH.ttf");
+    sfText_setString(text, text_str);
+    sfText_setCharacterSize(text, 11);
+    sfText_setColor(text, sfWhite);
+    sfText_setFont(text, font);
+    sfText_setPosition(text, pos_text);
+    return text;
+}
+
 /*
                                     --> --> --> --> -->
     linked list : head--prev-------------------------------------next--NULL
@@ -55,6 +71,8 @@ int new_right(sfRenderWindow *window, linked_dropdown **head, char *name,
         .next = *head,
     };
     new_node->sprite = create_menu_button(window, new_node),
+    new_node->text = create_text((sfVector2f) {origin.x + 2, origin.y + 4},
+        name);
     new_node->next = NULL;
     linked_dropdown *tmp = *head;
     while (*head != NULL)

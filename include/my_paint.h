@@ -7,7 +7,7 @@
 
 #ifndef MY_PAINT_H_
     #define MY_PAINT_H_
-    #define STANDARD_BUTTON_SIZE {40, 20}
+    #define STANDARD_BUTTON_SIZE {50, 20}
 
     #include <SFML/Graphics/Types.h>
     #include <SFML/Graphics.h>
@@ -32,6 +32,7 @@ enum button_state_s {
 };
 typedef struct linked_dropdown_s {
     sfRectangleShape *sprite;
+    sfText *text;
     sfVector2f size;
     sfVector2f origin;
     char *name;
