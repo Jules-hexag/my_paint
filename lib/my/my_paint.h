@@ -7,6 +7,7 @@
 
 #ifndef MY_PAINT_H_
     #define MY_PAINT_H_
+    #define DEFAULT_WINDOW_SIZE {1600, 900}
     #define STANDARD_BUTTON_SIZE {50, 20}
     #define STANDARD_CANVA_POSITION {410, 60}
     #define STANDARD_CANVA_SIZE {780, 780}

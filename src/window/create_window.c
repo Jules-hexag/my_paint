@@ -6,8 +6,13 @@
 */
 
 #include <SFML/Graphics.h>
+#include <SFML/Graphics/RenderWindow.h>
+#include <SFML/Graphics/Types.h>
+#include <SFML/Graphics/View.h>
+#include <SFML/System/Vector2.h>
 #include <stdio.h>
 #include "my.h"
+#include "my_paint.h"
 
 static int display_mode(char **env)
 {
@@ -29,5 +34,10 @@ sfRenderWindow *create_window(char **env)
 
     window = sfRenderWindow_create(mode, title, sfResize | sfClose, NULL);
     sfRenderWindow_setFramerateLimit(window, 60);
+
+    sfView *view = sfView_create();
+    sfView_setSize(view, (sfVector2f) DEFAULT_WINDOW_SIZE);
+    sfView_setCenter(view, (sfVector2f) {1600 / 2, 900 / 2});
+    sfRenderWindow_setView(window, view);
     return window;
 }

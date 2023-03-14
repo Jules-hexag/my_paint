@@ -15,8 +15,8 @@ static void draw_elems(sfRenderWindow *window, linked_dropdown *tmp)
     sfRenderWindow_drawText(window, tmp->text, NULL);
 }
 
-static void draw_hidden_dropdowns_buttons(menu_states *menu, sfRenderWindow *window,
-    all_dropdowns *dropdowns)
+static void draw_hidden_dropdowns_buttons(menu_states *menu,
+    sfRenderWindow *window, all_dropdowns *dropdowns)
 {
     if (menu->file_menu) {
         linked_dropdown *tmp = dropdowns->file_dropdown->next;
