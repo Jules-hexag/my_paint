@@ -11,8 +11,10 @@
 
 int my_strncmp(char const *s1, char const *s2, int n);
 int count_elem(linked_dropdown *head);
-int new_left(sfRenderWindow *window, linked_dropdown **head, char *name, sfVector2f origin);
-int new_right(sfRenderWindow *window, linked_dropdown **head, char *name, sfVector2f origin);
+int new_left(sfRenderWindow *window, linked_dropdown **head, char *name,
+    sfVector2f origin);
+int new_right(sfRenderWindow *window, linked_dropdown **head, char *name,
+    sfVector2f origin);
 void pop_first_elem(linked_dropdown **list);
 
 #endif /* MY_LIB_ */
