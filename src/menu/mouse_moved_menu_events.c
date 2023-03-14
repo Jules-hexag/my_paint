@@ -5,6 +5,7 @@
 ** mouse_events
 */
 
+#include <SFML/Graphics/RenderWindow.h>
 #include <SFML/Graphics/Types.h>
 #include <SFML/System/Vector2.h>
 #include <stdio.h>
@@ -19,11 +20,11 @@ static void file_button(linked_dropdown *file_dropdown, sfVector2f pos_mouse)
     (file_dropdown->origin.y + file_dropdown->size.y))) {
         file_dropdown->button_state = HOVER;
         sfRectangleShape_setFillColor(file_dropdown->sprite,
-            (sfColor) {250, 20, 102, 100});
+            (sfColor) {107, 0, 40, 255});
     } else {
         file_dropdown->button_state = NONE;
         sfRectangleShape_setFillColor(file_dropdown->sprite,
-            (sfColor) {200, 200, 200, 100});
+            (sfColor) {107, 107, 107, 255});
     }
 }
 
@@ -35,11 +36,11 @@ static void edit_button(linked_dropdown *edit_dropdown, sfVector2f pos_mouse)
     (edit_dropdown->origin.y + edit_dropdown->size.y))) {
         edit_dropdown->button_state = HOVER;
         sfRectangleShape_setFillColor(edit_dropdown->sprite,
-            (sfColor) {250, 20, 102, 100});
+            (sfColor) {107, 0, 40, 255});
     } else {
         edit_dropdown->button_state = NONE;
         sfRectangleShape_setFillColor(edit_dropdown->sprite,
-            (sfColor) {200, 200, 200, 100});
+            (sfColor) {107, 107, 107, 255});
     }
 }
 
@@ -51,11 +52,11 @@ static void help_button(linked_dropdown *help_dropdown, sfVector2f pos_mouse)
         (help_dropdown->origin.y + help_dropdown->size.y))) {
             help_dropdown->button_state = HOVER;
             sfRectangleShape_setFillColor(help_dropdown->sprite,
-                (sfColor) {250, 20, 102, 100});
+                (sfColor) {107, 0, 40, 255});
     } else {
         help_dropdown->button_state = NONE;
         sfRectangleShape_setFillColor(help_dropdown->sprite,
-            (sfColor) {200, 200, 200, 100});
+            (sfColor) {107, 107, 107, 255});
     }
 }
 
@@ -65,7 +66,7 @@ void mouse_moved_menu_events(sfRenderWindow *window, menu_states *menu,
     (void) menu;
     sfVector2i pos_mouse_pix = sfMouse_getPositionRenderWindow(window);
     sfVector2f pos_mouse = sfRenderWindow_mapPixelToCoords(window,
-        pos_mouse_pix, NULL);
+        pos_mouse_pix, sfRenderWindow_getView(window));
     linked_dropdown *tmp_file = dropdowns->file_dropdown;
     linked_dropdown *tmp_edit = dropdowns->edit_dropdown;
     linked_dropdown *tmp_help = dropdowns->help_dropdown;

@@ -36,7 +36,7 @@ sfRenderWindow *create_window(char **env)
     sfRenderWindow_setFramerateLimit(window, 60);
 
     sfView *view = sfView_create();
-    sfView_setSize(view, (sfVector2f) DEFAULT_WINDOW_SIZE);
+    sfView_setSize(view, (sfVector2f) {1600, 900});
     sfView_setCenter(view, (sfVector2f) {800, 450});
     sfRenderWindow_setView(window, view);
     return window;

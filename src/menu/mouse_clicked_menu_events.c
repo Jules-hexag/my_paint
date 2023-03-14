@@ -5,6 +5,7 @@
 ** mouse_clicked_events
 */
 
+#include <SFML/Graphics/RenderWindow.h>
 #include <SFML/Graphics/Types.h>
 #include <SFML/System/Vector2.h>
 #include <stdbool.h>

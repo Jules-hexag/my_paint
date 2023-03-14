@@ -21,7 +21,7 @@ sfRectangleShape *create_menu_button(sfRenderWindow *window,
     sfRectangleShape_setSize(menu_button, button->size);
     sfRectangleShape_setOutlineThickness(menu_button, (float) 2);
     sfRectangleShape_setOutlineColor(menu_button, sfBlack);
-    sfRectangleShape_setFillColor(menu_button, (sfColor) {200, 200, 200, 100});
+    sfRectangleShape_setFillColor(menu_button, (sfColor) {107, 107, 107, 255});
     return menu_button;
 }
 
@@ -31,7 +31,7 @@ sfRectangleShape *create_bar_rectangle(sfRenderWindow *window)
     sfVector2u win_size = sfRenderWindow_getSize(window);
     float win_width = (float) win_size.x;
     sfVector2f menu_bar_size = {win_width, 20};
-    sfColor bar_color = {107, 107, 107, 100};
+    sfColor bar_color = {79, 79, 79, 255};
     sfRectangleShape_setSize(menu_bar, menu_bar_size);
     sfRectangleShape_setPosition(menu_bar,
         sfRenderWindow_mapPixelToCoords(window,

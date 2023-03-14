@@ -16,8 +16,8 @@ sfRectangleShape *create_canva_default(sfRenderWindow *window)
     sfRectangleShape *canva = sfRectangleShape_create();
     sfRectangleShape_setPosition(canva,
         sfRenderWindow_mapPixelToCoords(window,
-        (sfVector2i) STANDARD_CANVA_POSITION, NULL));
-    sfRectangleShape_setSize(canva, (sfVector2f) STANDARD_CANVA_SIZE);
+        (sfVector2i) {410, 60}, NULL));
+    sfRectangleShape_setSize(canva, (sfVector2f) {780, 780});
     sfRectangleShape_setFillColor(canva, sfWhite);
     return canva;
 }

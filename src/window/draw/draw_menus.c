@@ -6,6 +6,7 @@
 */
 
 #include "my_paint.h"
+#include <SFML/Graphics/RectangleShape.h>
 #include <SFML/Graphics/RenderWindow.h>
 #include <SFML/Graphics/Types.h>
 
@@ -41,6 +42,8 @@ static void draw_hidden_dropdowns_buttons(menu_states *menu,
 void draw_dropdowns_elem(sfRenderWindow *window, all_dropdowns *dropdowns,
     menu_states *menu)
 {
+    sfRectangleShape_setSize(dropdowns->menu_bar,
+        (sfVector2f) {sfRenderWindow_getSize(window).x, 20});
     sfRenderWindow_drawRectangleShape(window, dropdowns->menu_bar, NULL);
 
     sfRenderWindow_drawRectangleShape(window, dropdowns->file_dropdown->sprite,

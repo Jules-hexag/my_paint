@@ -31,7 +31,7 @@ int new_left(sfRenderWindow *window, linked_dropdown **head, char *name,
     linked_dropdown *new_node = malloc(sizeof(linked_dropdown));
     if (!new_node) return ERROR_RETURN;
     *new_node = (linked_dropdown) {
-        .size = (sfVector2f) STANDARD_BUTTON_SIZE,
+        .size = (sfVector2f) {50, 20},
         .origin = origin,
         .name = name,
         .button_state = NONE,
@@ -64,7 +64,7 @@ int new_right(sfRenderWindow *window, linked_dropdown **head, char *name,
     linked_dropdown *new_node = malloc(sizeof(linked_dropdown));
     if (!new_node) return ERROR_RETURN;
     *new_node = (linked_dropdown) {
-        .size = (sfVector2f) STANDARD_BUTTON_SIZE,
+        .size = (sfVector2f) {50, 20},
         .origin = origin,
         .name = name,
         .button_state = NONE,

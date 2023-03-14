@@ -16,7 +16,7 @@ static int check_coords_help(sfVector2f pos_mouse, menu_states *menu,
     (pos_mouse.y > help_dropdown->origin.y && pos_mouse.y <
     (help_dropdown->origin.y + help_dropdown->size.y))) {
         sfRectangleShape_setFillColor(help_dropdown->sprite,
-            (sfColor) {153, 0, 51, 100});
+            (sfColor) {66, 1, 9, 255});
         !menu->help_menu ? (menu->help_menu = true) : (menu->help_menu = false);
         menu->file_menu = false;
         menu->edit_menu = false;
@@ -33,7 +33,7 @@ static int check_coords_edit(sfVector2f pos_mouse, menu_states *menu,
     (pos_mouse.y > edit_dropdown->origin.y && pos_mouse.y <
     (edit_dropdown->origin.y + edit_dropdown->size.y))) {
         sfRectangleShape_setFillColor(edit_dropdown->sprite,
-            (sfColor) {153, 0, 51, 100});
+            (sfColor) {66, 1, 9, 255});
         !menu->edit_menu ? (menu->edit_menu = true) : (menu->edit_menu = false);
         menu->file_menu = false;
         menu->help_menu = false;
@@ -50,7 +50,7 @@ static int check_coords_file(sfVector2f pos_mouse, menu_states *menu,
     (pos_mouse.y > file_dropdown->origin.y && pos_mouse.y <
     (file_dropdown->origin.y + file_dropdown->size.y))) {
         sfRectangleShape_setFillColor(file_dropdown->sprite,
-            (sfColor) {153, 0, 51, 100});
+            (sfColor) {66, 1, 9, 255});
         !menu->file_menu ? (menu->file_menu = true) : (menu->file_menu = false);
         menu->edit_menu = false;
         menu->help_menu = false;
