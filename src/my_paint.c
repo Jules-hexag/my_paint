@@ -23,8 +23,9 @@ static all_dropdowns init_dropdowns(void)
     return dropdowns;
 }
 
-int my_paint(char **env)
+int my_paint(char **env, char const *const *argv)
 {
+    (void) argv;
     sfRenderWindow *window = create_window(env);
     all_dropdowns dropdowns = init_dropdowns();
     menu_states menu = (menu_states) {
@@ -33,9 +34,11 @@ int my_paint(char **env)
         .help_menu = false,
     };
     if (!window) return ERROR_RETURN;
-    sfRectangleShape *menu_bar = create_menu_bar(window, &menu, &dropdowns);
+    sfRectangleShape *canva = create_canva_default(window);
+    dropdowns.menu_bar = create_menu_bar(window, &menu, &dropdowns);
     while (sfRenderWindow_isOpen(window)) {
-        frame_loop(window, menu_bar, &menu, &dropdowns);
+        canva_loop(window, canva);
+        menus_loop(window, &menu, &dropdowns);
     }
     sfRenderWindow_destroy(window);
     return SUCCESS_RETURN;

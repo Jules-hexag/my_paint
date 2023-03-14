@@ -8,6 +8,8 @@
 #ifndef MY_PAINT_H_
     #define MY_PAINT_H_
     #define STANDARD_BUTTON_SIZE {50, 20}
+    #define STANDARD_CANVA_POSITION {410, 60}
+    #define STANDARD_CANVA_SIZE {780, 780}
 
     #include <SFML/Graphics/Types.h>
     #include <SFML/Graphics.h>
@@ -44,21 +46,21 @@ typedef struct {
     linked_dropdown *file_dropdown;
     linked_dropdown *edit_dropdown;
     linked_dropdown *help_dropdown;
+    sfRectangleShape *menu_bar;
 } all_dropdowns;
 
 /*  SOURCE  */
-int my_paint(char **env);
+int my_paint(char **env, char const *const *argv);
 sfRenderWindow *create_window(char **env);
 void event_management(sfRenderWindow *window, menu_states *menu,
     all_dropdowns *dropdowns);
-void frame_loop(sfRenderWindow *window, sfRectangleShape *menu_bar,
-    menu_states *menu, all_dropdowns *dropdowns);
+void menus_loop(sfRenderWindow *window, menu_states *menu,
+    all_dropdowns *dropdowns);
+void canva_loop(sfRenderWindow *window, sfRectangleShape *canva);
 
 /*  DRAW ELEMENTS   */
-void draw_hidden_dropdowns_buttons(menu_states *menu, sfRenderWindow *window,
-    all_dropdowns *dropdowns);
-void draw_permanent_dropdowns_elem(sfRenderWindow *window,
-    sfRectangleShape *menu_bar, all_dropdowns *dropdowns);
+void draw_dropdowns_elem(sfRenderWindow *window, all_dropdowns *dropdowns,
+    menu_states *menu);
 
 /*    MENU BAR    */
 sfRectangleShape *create_menu_bar(sfRenderWindow *window, menu_states *menu,
@@ -68,6 +70,9 @@ sfRectangleShape *create_menu_button(sfRenderWindow *window,
     linked_dropdown *button);
 void create_dropdowns(sfRenderWindow *window, menu_states *menu,
     all_dropdowns *dropdowns);
+
+/*      CANVA       */
+sfRectangleShape *create_canva_default(sfRenderWindow *window);
 
 /*      MOUSE EVENT     */
 void mouse_moved_menu_events(sfRenderWindow *window, menu_states *menu,

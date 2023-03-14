@@ -23,7 +23,7 @@ static int display_mode(char **env)
 sfRenderWindow *create_window(char **env)
 {
     if (display_mode(env)) return NULL;
-    const char title[] = "Fenêtre";
+    const char title[] = "Shotophop";
     sfVideoMode mode = {1600, 900, 32};
     sfRenderWindow *window;
 

@@ -9,31 +9,13 @@
 #include <SFML/Graphics/RenderWindow.h>
 #include <SFML/Graphics/Types.h>
 
-void draw_permanent_dropdowns_elem(sfRenderWindow *window,
-    sfRectangleShape *menu_bar, all_dropdowns *dropdowns)
-{
-    sfRenderWindow_drawRectangleShape(window, menu_bar, NULL);
-
-    sfRenderWindow_drawRectangleShape(window, dropdowns->file_dropdown->sprite,
-        NULL);
-    sfRenderWindow_drawText(window, dropdowns->file_dropdown->text, NULL);
-
-    sfRenderWindow_drawRectangleShape(window, dropdowns->edit_dropdown->sprite,
-        NULL);
-    sfRenderWindow_drawText(window, dropdowns->edit_dropdown->text, NULL);
-
-    sfRenderWindow_drawRectangleShape(window, dropdowns->help_dropdown->sprite,
-        NULL);
-    sfRenderWindow_drawText(window, dropdowns->help_dropdown->text, NULL);
-}
-
 static void draw_elems(sfRenderWindow *window, linked_dropdown *tmp)
 {
     sfRenderWindow_drawRectangleShape(window, tmp->sprite, NULL);
     sfRenderWindow_drawText(window, tmp->text, NULL);
 }
 
-void draw_hidden_dropdowns_buttons(menu_states *menu, sfRenderWindow *window,
+static void draw_hidden_dropdowns_buttons(menu_states *menu, sfRenderWindow *window,
     all_dropdowns *dropdowns)
 {
     if (menu->file_menu) {
@@ -54,4 +36,23 @@ void draw_hidden_dropdowns_buttons(menu_states *menu, sfRenderWindow *window,
             tmp = tmp->next;
         }
     }
+}
+
+void draw_dropdowns_elem(sfRenderWindow *window, all_dropdowns *dropdowns,
+    menu_states *menu)
+{
+    sfRenderWindow_drawRectangleShape(window, dropdowns->menu_bar, NULL);
+
+    sfRenderWindow_drawRectangleShape(window, dropdowns->file_dropdown->sprite,
+        NULL);
+    sfRenderWindow_drawText(window, dropdowns->file_dropdown->text, NULL);
+
+    sfRenderWindow_drawRectangleShape(window, dropdowns->edit_dropdown->sprite,
+        NULL);
+    sfRenderWindow_drawText(window, dropdowns->edit_dropdown->text, NULL);
+
+    sfRenderWindow_drawRectangleShape(window, dropdowns->help_dropdown->sprite,
+        NULL);
+    sfRenderWindow_drawText(window, dropdowns->help_dropdown->text, NULL);
+    draw_hidden_dropdowns_buttons(menu, window, dropdowns);
 }

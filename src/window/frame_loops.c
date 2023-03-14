@@ -11,12 +11,17 @@
 #include "my_paint.h"
 #include "my.h"
 
-void frame_loop(sfRenderWindow *window, sfRectangleShape *menu_bar,
-    menu_states *menu, all_dropdowns *dropdowns)
+void canva_loop(sfRenderWindow *window, sfRectangleShape *canva)
 {
     sfRenderWindow_clear(window, sfBlack);
-    draw_permanent_dropdowns_elem(window, menu_bar, dropdowns);
+    sfRenderWindow_drawRectangleShape(window, canva, NULL);
+    return;
+}
+
+void menus_loop(sfRenderWindow *window, menu_states *menu,
+    all_dropdowns *dropdowns)
+{
     event_management(window, menu, dropdowns);
-    draw_hidden_dropdowns_buttons(menu, window, dropdowns);
+    draw_dropdowns_elem(window, dropdowns, menu);
     sfRenderWindow_display(window);
 }
