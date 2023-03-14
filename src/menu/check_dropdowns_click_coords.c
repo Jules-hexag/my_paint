@@ -6,6 +6,7 @@
 */
 
 #include "my_paint.h"
+#include "my.h"
 #include <SFML/System/Vector2.h>
 
 static int check_coords_help(sfVector2f pos_mouse, menu_states *menu,
@@ -17,7 +18,8 @@ static int check_coords_help(sfVector2f pos_mouse, menu_states *menu,
     (help_dropdown->origin.y + help_dropdown->size.y))) {
         sfRectangleShape_setFillColor(help_dropdown->sprite,
             (sfColor) {66, 1, 9, 255});
-        !menu->help_menu ? (menu->help_menu = true) : (menu->help_menu = false);
+        (!menu->help_menu && !my_strncmp(help_dropdown->name, "help", 4)) ?
+            (menu->help_menu = true) : (menu->help_menu = false);
         menu->file_menu = false;
         menu->edit_menu = false;
         return 1;
@@ -34,7 +36,8 @@ static int check_coords_edit(sfVector2f pos_mouse, menu_states *menu,
     (edit_dropdown->origin.y + edit_dropdown->size.y))) {
         sfRectangleShape_setFillColor(edit_dropdown->sprite,
             (sfColor) {66, 1, 9, 255});
-        !menu->edit_menu ? (menu->edit_menu = true) : (menu->edit_menu = false);
+        (!menu->edit_menu && !my_strncmp(edit_dropdown->name, "edit", 4)) ?
+            (menu->edit_menu = true) : (menu->edit_menu = false);
         menu->file_menu = false;
         menu->help_menu = false;
         return 1;
@@ -51,7 +54,8 @@ static int check_coords_file(sfVector2f pos_mouse, menu_states *menu,
     (file_dropdown->origin.y + file_dropdown->size.y))) {
         sfRectangleShape_setFillColor(file_dropdown->sprite,
             (sfColor) {66, 1, 9, 255});
-        !menu->file_menu ? (menu->file_menu = true) : (menu->file_menu = false);
+        (!menu->file_menu && !my_strncmp(file_dropdown->name, "file", 4)) ?
+            (menu->file_menu = true) : (menu->file_menu = false);
         menu->edit_menu = false;
         menu->help_menu = false;
         return 1;
