@@ -25,7 +25,7 @@ static int display_mode(char **env)
     return 1;
 }
 
-sfRenderWindow *create_window(char **env)
+sfRenderWindow *init_window(char **env)
 {
     if (display_mode(env)) return NULL;
     const char title[] = "Shotophop";

@@ -64,12 +64,28 @@
       "-Wextra",
       "-c",
       "-o",
-      "src/window/frame_loop.o",
-      "src/window/frame_loop.c"
+      "src/window/frame_loops.o",
+      "src/window/frame_loops.c"
     ],
     "directory": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin",
-    "file": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin/src/window/frame_loop.c",
-    "output": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin/src/window/frame_loop.o"
+    "file": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin/src/window/frame_loops.c",
+    "output": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin/src/window/frame_loops.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I./include",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-c",
+      "-o",
+      "src/canva/create_canva.o",
+      "src/canva/create_canva.c"
+    ],
+    "directory": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin",
+    "file": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin/src/canva/create_canva.c",
+    "output": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin/src/canva/create_canva.o"
   },
   {
     "arguments": [
@@ -86,6 +102,22 @@
     "directory": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin",
     "file": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin/src/window/create_window.c",
     "output": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin/src/window/create_window.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I./include",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-c",
+      "-o",
+      "src/window/draw/draw_menus.o",
+      "src/window/draw/draw_menus.c"
+    ],
+    "directory": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin",
+    "file": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin/src/window/draw/draw_menus.c",
+    "output": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin/src/window/draw/draw_menus.o"
   },
   {
     "arguments": [
@@ -128,6 +160,54 @@
       "-Wextra",
       "-c",
       "-o",
+      "src/menu_bar/create_rect_objects.o",
+      "src/menu_bar/create_rect_objects.c"
+    ],
+    "directory": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin",
+    "file": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin/src/menu_bar/create_rect_objects.c",
+    "output": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin/src/menu_bar/create_rect_objects.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I./include",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-c",
+      "-o",
+      "src/menu/mouse_moved_menu_events.o",
+      "src/menu/mouse_moved_menu_events.c"
+    ],
+    "directory": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin",
+    "file": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin/src/menu/mouse_moved_menu_events.c",
+    "output": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin/src/menu/mouse_moved_menu_events.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I./include",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-c",
+      "-o",
+      "src/menu/mouse_clicked_menu_events.o",
+      "src/menu/mouse_clicked_menu_events.c"
+    ],
+    "directory": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin",
+    "file": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin/src/menu/mouse_clicked_menu_events.c",
+    "output": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin/src/menu/mouse_clicked_menu_events.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I./include",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-c",
+      "-o",
       "src/menu_bar/buttons/create_dropdowns.o",
       "src/menu_bar/buttons/create_dropdowns.c"
     ],
@@ -144,11 +224,11 @@
       "-Wextra",
       "-c",
       "-o",
-      "src/menu_bar/create_rect_objects.o",
-      "src/menu_bar/create_rect_objects.c"
+      "src/menu/check_dropdowns_click_coords.o",
+      "src/menu/check_dropdowns_click_coords.c"
     ],
     "directory": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin",
-    "file": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin/src/menu_bar/create_rect_objects.c",
-    "output": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin/src/menu_bar/create_rect_objects.o"
+    "file": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin/src/menu/check_dropdowns_click_coords.c",
+    "output": "/home/jules/Epitech/B-MUL-200-BDX-2-1-mypaint-jules.fradin/src/menu/check_dropdowns_click_coords.o"
   }
 ]

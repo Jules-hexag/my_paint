@@ -17,6 +17,7 @@ enum {
     ERROR_RETURN = 84,
 };
 
+
 typedef struct {
     bool file_menu;
     bool edit_menu;
@@ -52,13 +53,24 @@ typedef struct {
     sfSprite *sprite;
 } canva_t;
 
+typedef struct {
+    bool pen;
+    bool eraser;
+} selected_tool;
+
+typedef struct {
+    sfRenderWindow *window;
+    menu_states menu;
+    canva_t *canva;
+    all_dropdowns dropdowns;
+} important_elements_t;
+
 /*  SOURCE  */
 int my_paint(char **env, char const *const *argv);
-sfRenderWindow *create_window(char **env);
+sfRenderWindow *init_window(char **env);
 void event_management(sfRenderWindow *window, menu_states *menu,
     all_dropdowns *dropdowns);
-void frame_loop(sfRenderWindow *window, menu_states *menu, canva_t *canva,
-    all_dropdowns *dropdowns);
+void frame_loop(important_elements_t *important_elements);
 
 /*  DRAW ELEMENTS   */
 void draw_dropdowns_elem(sfRenderWindow *window, all_dropdowns *dropdowns,
