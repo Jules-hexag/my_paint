@@ -37,8 +37,7 @@ int my_paint(char **env, char const *const *argv)
     canva_t *canva = create_canva_default();
     dropdowns.menu_bar = create_menu_bar(window, &menu, &dropdowns);
     while (sfRenderWindow_isOpen(window)) {
-        canva_loop(window, canva);
-        menus_loop(window, &menu, &dropdowns);
+        frame_loop(window, &menu, canva, &dropdowns);
     }
     sfRenderWindow_destroy(window);
     return SUCCESS_RETURN;

@@ -57,9 +57,8 @@ int my_paint(char **env, char const *const *argv);
 sfRenderWindow *create_window(char **env);
 void event_management(sfRenderWindow *window, menu_states *menu,
     all_dropdowns *dropdowns);
-void menus_loop(sfRenderWindow *window, menu_states *menu,
+void frame_loop(sfRenderWindow *window, menu_states *menu, canva_t *canva,
     all_dropdowns *dropdowns);
-void canva_loop(sfRenderWindow *window, canva_t *canva);
 
 /*  DRAW ELEMENTS   */
 void draw_dropdowns_elem(sfRenderWindow *window, all_dropdowns *dropdowns,
