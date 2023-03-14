@@ -11,10 +11,10 @@
 #include "my_paint.h"
 #include "my.h"
 
-void canva_loop(sfRenderWindow *window, sfRectangleShape *canva)
+void canva_loop(sfRenderWindow *window, canva_t *canva)
 {
     sfRenderWindow_clear(window, sfBlack);
-    sfRenderWindow_drawRectangleShape(window, canva, NULL);
+    sfRenderWindow_drawSprite(window, canva->sprite, NULL);
     return;
 }
 

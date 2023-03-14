@@ -34,7 +34,7 @@ int my_paint(char **env, char const *const *argv)
         .help_menu = false,
     };
     if (!window) return ERROR_RETURN;
-    sfRectangleShape *canva = create_canva_default(window);
+    canva_t *canva = create_canva_default();
     dropdowns.menu_bar = create_menu_bar(window, &menu, &dropdowns);
     while (sfRenderWindow_isOpen(window)) {
         canva_loop(window, canva);

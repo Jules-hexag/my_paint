@@ -46,6 +46,12 @@ typedef struct {
     sfRectangleShape *menu_bar;
 } all_dropdowns;
 
+typedef struct {
+    sfImage *image;
+    sfTexture *texture;
+    sfSprite *sprite;
+} canva_t;
+
 /*  SOURCE  */
 int my_paint(char **env, char const *const *argv);
 sfRenderWindow *create_window(char **env);
@@ -53,7 +59,7 @@ void event_management(sfRenderWindow *window, menu_states *menu,
     all_dropdowns *dropdowns);
 void menus_loop(sfRenderWindow *window, menu_states *menu,
     all_dropdowns *dropdowns);
-void canva_loop(sfRenderWindow *window, sfRectangleShape *canva);
+void canva_loop(sfRenderWindow *window, canva_t *canva);
 
 /*  DRAW ELEMENTS   */
 void draw_dropdowns_elem(sfRenderWindow *window, all_dropdowns *dropdowns,
@@ -69,7 +75,7 @@ void create_dropdowns(sfRenderWindow *window, menu_states *menu,
     all_dropdowns *dropdowns);
 
 /*      CANVA       */
-sfRectangleShape *create_canva_default(sfRenderWindow *window);
+canva_t *create_canva_default(void);
 
 /*      MOUSE EVENT     */
 void mouse_moved_menu_events(sfRenderWindow *window, menu_states *menu,
