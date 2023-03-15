@@ -15,7 +15,8 @@
 #include <SFML/System/Vector2.h>
 #include <stdio.h>
 
-static int check_if_in_canva(canva_t *canva, sfVector2f *pos_mouse)
+static int check_if_in_canva(canva_t *canva, sfVector2f *pos_mouse,
+    selected_tool tool)
 {
 
     sfVector2u canva_len = sfTexture_getSize(canva->texture);
@@ -24,8 +25,10 @@ static int check_if_in_canva(canva_t *canva, sfVector2f *pos_mouse)
     sfVector2f bl = {tl.x, tl.y + canva_len.y};
     if ((pos_mouse->x - tl.x) > 0 && (pos_mouse->x - tr.x) < 0
         && (pos_mouse->y - tl.y) > 0 && (pos_mouse->y - bl.y) < 0) {
-            sfImage_setPixel(canva->image, pos_mouse->x - tl.x,
-                pos_mouse->y - tl.y, sfBlack);
+            tool.pen ? sfImage_setPixel(canva->image, pos_mouse->x - tl.x,
+                pos_mouse->y - tl.y, sfBlack) : 0;
+            tool.eraser ? sfImage_setPixel(canva->image, pos_mouse->x - tl.x,
+                pos_mouse->y - tl.y, sfWhite) : 0;
             sfTexture_updateFromImage(canva->texture, canva->image, 0, 0);
             sfSprite_setTexture(canva->sprite, canva->texture, sfTrue);
             return SUCCESS_RETURN;
@@ -33,8 +36,8 @@ static int check_if_in_canva(canva_t *canva, sfVector2f *pos_mouse)
     return ERROR_RETURN;
 }
 
-void fill_pixels(canva_t *canva, sfVector2f *pos_mouse)
+void fill_pixels(canva_t *canva, sfVector2f *pos_mouse, selected_tool tool)
 {
-    check_if_in_canva(canva, pos_mouse);
+    check_if_in_canva(canva, pos_mouse, tool);
     return;
 }

@@ -27,7 +27,6 @@ void check_if_in_help_dropdown(sfVector2f pos_mouse,
     main_elms->dropdowns.help_dropdown->origin.y && (pos_mouse.y <
     (main_elms->dropdowns.help_dropdown->origin.y +
     (main_elms->dropdowns.help_dropdown->size.y * 3))))) {
-        // int button_index = pos_mouse.y / 20;
     }
 }
 

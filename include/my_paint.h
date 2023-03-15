@@ -90,7 +90,7 @@ void create_dropdowns(sfRenderWindow *window, menu_states *menu,
 /*      CANVA & DRAWING      */
 canva_t *create_canva_default(void);
 void draw(sfRenderWindow *window, canva_t *canva, selected_tool tool);
-void fill_pixels(canva_t *canva, sfVector2f *pos_mouse);
+void fill_pixels(canva_t *canva, sfVector2f *pos_mouse, selected_tool tool);
 
 /*      DROPDOWNS FUNCTIONS     */
 void check_if_in_file_dropdown(sfVector2f pos_mouse,

@@ -9,10 +9,9 @@
 
 void draw(sfRenderWindow *window, canva_t *canva, selected_tool tool)
 {
-    (void) tool;
     sfVector2i pos_mouse_pix = sfMouse_getPositionRenderWindow(window);
     sfVector2f pos_mouse = sfRenderWindow_mapPixelToCoords(window,
         pos_mouse_pix, NULL);
-    fill_pixels(canva, &pos_mouse);
+    fill_pixels(canva, &pos_mouse, tool);
     return;
 }
