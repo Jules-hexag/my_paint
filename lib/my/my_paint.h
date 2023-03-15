@@ -93,16 +93,18 @@ void draw(sfRenderWindow *window, canva_t *canva, selected_tool tool);
 void fill_pixels(canva_t *canva, sfVector2f *pos_mouse);
 
 /*      DROPDOWNS FUNCTIONS     */
-int check_if_in_file_dropdown(sfVector2f pos_mouse,
-    main_elements_t *main_elements);
-void save(main_elements_t *main_elements);
+void check_if_in_file_dropdown(sfVector2f pos_mouse,
+    main_elements_t *main_elms);
+void check_if_in_edit_dropdown(sfVector2f pos_mouse,
+    main_elements_t *main_elms);
+void check_if_in_help_dropdown(sfVector2f pos_mouse,
+    main_elements_t *main_elms);
+
 void new(main_elements_t *main_elements);
+void save(main_elements_t *main_elements);
+void pen(main_elements_t *main_elements);
+void eraser(main_elements_t *main_elements);
 
-int check_if_in_edit_dropdown(sfVector2f pos_mouse, all_dropdowns *dropdowns,
-    menu_states menu);
-
-int check_if_in_help_dropdown(sfVector2f pos_mouse, all_dropdowns *dropdowns,
-    menu_states menu);
 
 /*      MOUSE EVENT     */
 void mouse_moved_menu_events(sfRenderWindow *window, menu_states *menu,
