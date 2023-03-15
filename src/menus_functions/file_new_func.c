@@ -10,7 +10,7 @@
 #include <SFML/Graphics/Types.h>
 #include <stdio.h>
 
-void new(sfImage *image, char *filename)
+void new(main_elements_t *main_elements)
 {
-    sfImage_saveToFile(image, filename);
+    sfImage_saveToFile(main_elements->canva->image, main_elements->filename);
 }
