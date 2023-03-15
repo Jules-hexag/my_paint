@@ -65,11 +65,12 @@ typedef struct {
     canva_t *canva;
     all_dropdowns dropdowns;
     selected_tool tool;
+    char *filename;
 } main_elements_t;
 
 /*  SOURCE  */
-int my_paint(char **env, char const *const *argv);
-sfRenderWindow *init_window(char **env);
+int my_paint(int const argc, char const *const *env, char *const *const argv);
+sfRenderWindow *init_window(char const *const *env);
 void event_management(main_elements_t *important_elements);
 void frame_loop(main_elements_t *important_elements);
 
@@ -91,11 +92,21 @@ canva_t *create_canva_default(void);
 void draw(sfRenderWindow *window, canva_t *canva, selected_tool tool);
 void fill_pixels(canva_t *canva, sfVector2f *pos_mouse);
 
+/*      DROPDOWNS FUNCTIONS     */
+int check_if_in_file_dropdown(sfVector2f pos_mouse,
+    main_elements_t *main_elements);
+void new(sfImage *image, char *filename);
+
+int check_if_in_edit_dropdown(sfVector2f pos_mouse, all_dropdowns *dropdowns,
+    menu_states menu);
+
+int check_if_in_help_dropdown(sfVector2f pos_mouse, all_dropdowns *dropdowns,
+    menu_states menu);
+
 /*      MOUSE EVENT     */
 void mouse_moved_menu_events(sfRenderWindow *window, menu_states *menu,
     all_dropdowns *dropdowns);
-void mouse_clicked_menu_events(sfRenderWindow *window, menu_states *menu,
-    all_dropdowns *dropdowns);
+void mouse_clicked_menu_events(main_elements_t *main_elements);
 void check_dropdowns_click_coords(sfVector2f pos_mouse, menu_states *menu,
     all_dropdowns *dropdowns);
 

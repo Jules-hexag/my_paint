@@ -35,6 +35,6 @@ static int check_if_in_canva(canva_t *canva, sfVector2f *pos_mouse)
 
 void fill_pixels(canva_t *canva, sfVector2f *pos_mouse)
 {
-    if (check_if_in_canva(canva, pos_mouse)) return;
+    check_if_in_canva(canva, pos_mouse);
     return;
 }

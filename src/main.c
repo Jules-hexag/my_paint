@@ -7,8 +7,7 @@
 
 #include "my_paint.h"
 
-int main(int const argc, char const *const *argv, char **env)
+int main(int const argc, char *const *const argv, char const *const *env)
 {
-    (void) (argc);
-    return my_paint(env, argv);
+    return my_paint(argc, env, argv);
 }

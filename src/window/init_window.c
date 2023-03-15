@@ -14,7 +14,7 @@
 #include "my.h"
 #include "my_paint.h"
 
-static int display_mode(char **env)
+static int display_mode(char const *const *env)
 {
     int env_vars = 0;
     while (env[env_vars] != NULL) {
@@ -25,7 +25,7 @@ static int display_mode(char **env)
     return 1;
 }
 
-sfRenderWindow *init_window(char **env)
+sfRenderWindow *init_window(char const *const *env)
 {
     if (display_mode(env)) return NULL;
     const char title[] = "Shotophop";

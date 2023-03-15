@@ -16,7 +16,9 @@ SRC 	=	src/main.c \
 			src/events/event_management.c \
 			src/menu_bar/create_menu_bar.c \
 			src/menu_bar/create_rect_objects.c \
+			src/menus_functions/file_new_func.c \
 			src/menu_bar/buttons/create_dropdowns.c \
+			src/menus_functions/check_if_in_dropdown.c \
 			src/events/menu_events/mouse_moved_menu_events.c \
 			src/events/menu_events/mouse_clicked_menu_events.c \
 			src/events/menu_events/check_dropdowns_click_coords.c

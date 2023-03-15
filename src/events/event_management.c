@@ -32,8 +32,7 @@ static void mouse_button_event(sfEvent event, main_elements_t *main_elms)
 {
     if (event.type == sfEvtMouseButtonReleased) main_elms->tool.doing = false;
     if (event.type == sfEvtMouseButtonPressed) {
-        mouse_clicked_menu_events(main_elms->window, &main_elms->menu,
-            &main_elms->dropdowns);
+        mouse_clicked_menu_events(main_elms);
         main_elms->tool.doing = true;
     }
 }
