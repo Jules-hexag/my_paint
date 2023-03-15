@@ -73,6 +73,7 @@ int my_paint(int const argc, char const *const *env, char *const *const argv);
 sfRenderWindow *init_window(char const *const *env);
 void event_management(main_elements_t *important_elements);
 void frame_loop(main_elements_t *important_elements);
+void destroy(main_elements_t *main_elms);
 
 /*  DRAW ELEMENTS ON WINDOW  */
 void draw_dropdowns_elem(sfRenderWindow *window, all_dropdowns *dropdowns,

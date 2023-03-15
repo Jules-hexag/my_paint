@@ -57,6 +57,7 @@ int my_paint(int const argc, char const *const *env, char *const *const argv)
     while (sfRenderWindow_isOpen(main_elms.window)) {
         frame_loop(&main_elms);
     }
+    destroy(&main_elms);
     sfRenderWindow_destroy(main_elms.window);
     return SUCCESS_RETURN;
 }

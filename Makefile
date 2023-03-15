@@ -8,6 +8,7 @@
 SRC 	=	src/main.c \
 			src/my_paint.c \
 			src/drawing/draw.c \
+			src/destroy/destroy.c \
 			src/drawing/fill_pixels.c \
 			src/window/frame_loops.c \
 			src/canva/create_canva.c \
