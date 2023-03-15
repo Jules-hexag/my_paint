@@ -33,13 +33,14 @@ static menu_states init_menus(void)
     return menu;
 }
 
-static important_elements_t init_important_elements(char **env)
+static main_elements_t init_important_elements(char **env)
 {
-    important_elements_t important_elements = (important_elements_t) {
+    main_elements_t important_elements = (main_elements_t) {
         .window = init_window(env),
         .menu = init_menus(),
         .canva = create_canva_default(),
         .dropdowns = init_dropdowns(),
+        .tool = {true, false, false},
     };
     return important_elements;
 }
@@ -47,7 +48,7 @@ static important_elements_t init_important_elements(char **env)
 int my_paint(char **env, char const *const *argv)
 {
     (void) argv;
-    important_elements_t prime_elms = init_important_elements(env);
+    main_elements_t prime_elms = init_important_elements(env);
     if (!prime_elms.window) return ERROR_RETURN;
     prime_elms.dropdowns.menu_bar = create_menu_bar(prime_elms.window,
         &prime_elms.menu, &prime_elms.dropdowns);

@@ -24,7 +24,7 @@ typedef struct {
     bool help_menu;
 } menu_states;
 
-enum button_state_s {
+enum button_state_e {
     NONE = 0,
     HOVER,
     PRESSED,
@@ -36,7 +36,7 @@ typedef struct linked_dropdown_s {
     sfVector2f size;
     sfVector2f origin;
     char *name;
-    enum button_state_s button_state;
+    enum button_state_e button_state;
     struct linked_dropdown_s *next;
 } linked_dropdown;
 
@@ -56,6 +56,7 @@ typedef struct {
 typedef struct {
     bool pen;
     bool eraser;
+    bool doing;
 } selected_tool;
 
 typedef struct {
@@ -63,16 +64,16 @@ typedef struct {
     menu_states menu;
     canva_t *canva;
     all_dropdowns dropdowns;
-} important_elements_t;
+    selected_tool tool;
+} main_elements_t;
 
 /*  SOURCE  */
 int my_paint(char **env, char const *const *argv);
 sfRenderWindow *init_window(char **env);
-void event_management(sfRenderWindow *window, menu_states *menu,
-    all_dropdowns *dropdowns);
-void frame_loop(important_elements_t *important_elements);
+void event_management(main_elements_t *important_elements);
+void frame_loop(main_elements_t *important_elements);
 
-/*  DRAW ELEMENTS   */
+/*  DRAW ELEMENTS ON WINDOW  */
 void draw_dropdowns_elem(sfRenderWindow *window, all_dropdowns *dropdowns,
     menu_states *menu);
 
@@ -85,8 +86,10 @@ sfRectangleShape *create_menu_button(sfRenderWindow *window,
 void create_dropdowns(sfRenderWindow *window, menu_states *menu,
     all_dropdowns *dropdowns);
 
-/*      CANVA       */
+/*      CANVA & DRAWING      */
 canva_t *create_canva_default(void);
+void draw(sfRenderWindow *window, canva_t *canva, selected_tool tool);
+void fill_pixels(canva_t *canva, sfVector2f *pos_mouse);
 
 /*      MOUSE EVENT     */
 void mouse_moved_menu_events(sfRenderWindow *window, menu_states *menu,

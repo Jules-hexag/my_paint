@@ -19,10 +19,9 @@ static void canva_loop(sfRenderWindow *window, canva_t *canva)
     return;
 }
 
-void frame_loop(important_elements_t *main_elms)
+void frame_loop(main_elements_t *main_elms)
 {
-    event_management(main_elms->window, &main_elms->menu,
-        &main_elms->dropdowns);
+    event_management(main_elms);
     canva_loop(main_elms->window, main_elms->canva);
     draw_dropdowns_elem(main_elms->window, &main_elms->dropdowns,
         &main_elms->menu);

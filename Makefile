@@ -7,6 +7,8 @@
 
 SRC 	=	src/main.c \
 			src/my_paint.c \
+			src/drawing/draw.c \
+			src/drawing/fill_pixels.c \
 			src/window/frame_loops.c \
 			src/canva/create_canva.c \
 			src/window/init_window.c \
@@ -14,10 +16,10 @@ SRC 	=	src/main.c \
 			src/events/event_management.c \
 			src/menu_bar/create_menu_bar.c \
 			src/menu_bar/create_rect_objects.c \
-			src/menu/mouse_moved_menu_events.c \
-			src/menu/mouse_clicked_menu_events.c \
 			src/menu_bar/buttons/create_dropdowns.c \
-			src/menu/check_dropdowns_click_coords.c
+			src/events/menu_events/mouse_moved_menu_events.c \
+			src/events/menu_events/mouse_clicked_menu_events.c \
+			src/events/menu_events/check_dropdowns_click_coords.c
 
 TESTS_SRC	=	bonus/tests.c \
 
