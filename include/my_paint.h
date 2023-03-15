@@ -80,13 +80,12 @@ void draw_dropdowns_elem(sfRenderWindow *window, all_dropdowns *dropdowns,
     menu_states *menu);
 
 /*    MENU BAR    */
-sfRectangleShape *create_menu_bar(sfRenderWindow *window, menu_states *menu,
+sfRectangleShape *create_menu_bar(sfRenderWindow *window,
     all_dropdowns *dropdowns);
 sfRectangleShape *create_bar_rectangle(sfRenderWindow *window);
 sfRectangleShape *create_menu_button(sfRenderWindow *window,
     linked_dropdown *button);
-void create_dropdowns(sfRenderWindow *window, menu_states *menu,
-    all_dropdowns *dropdowns);
+void create_dropdowns(sfRenderWindow *window, all_dropdowns *dropdowns);
 
 /*      CANVA & DRAWING      */
 canva_t *create_canva_default(void);
@@ -105,6 +104,8 @@ void new(main_elements_t *main_elements);
 void save(main_elements_t *main_elements);
 void pen(main_elements_t *main_elements);
 void eraser(main_elements_t *main_elements);
+void flip(main_elements_t *main_elements);
+void invert(main_elements_t *main_elements);
 
 
 /*      MOUSE EVENT     */

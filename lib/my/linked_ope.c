@@ -12,7 +12,6 @@
 #include <stdlib.h>
 #include "my_paint.h"
 
-
 int count_elem(linked_dropdown *head)
 {
     int i = 1;

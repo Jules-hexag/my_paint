@@ -53,7 +53,7 @@ int my_paint(int const argc, char const *const *env, char *const *const argv)
     main_elements_t main_elms = init_important_elements(argc, argv, env);
     if (!main_elms.window) return ERROR_RETURN;
     main_elms.dropdowns.menu_bar = create_menu_bar(main_elms.window,
-        &main_elms.menu, &main_elms.dropdowns);
+        &main_elms.dropdowns);
     while (sfRenderWindow_isOpen(main_elms.window)) {
         frame_loop(&main_elms);
     }

@@ -9,10 +9,8 @@
 #include "my_paint.h"
 #include "my.h"
 
-void create_dropdowns(sfRenderWindow *window, menu_states *menu, all_dropdowns
-    *dropdowns)
+void create_dropdowns(sfRenderWindow *window, all_dropdowns *dropdowns)
 {
-    (void) menu;
     new_right(window, &dropdowns->file_dropdown, "file", (sfVector2f) {35, 0});
     new_right(window, &dropdowns->file_dropdown, "new", (sfVector2f) {35, 20});
     new_right(window, &dropdowns->file_dropdown, "open", (sfVector2f) {35, 40});
@@ -22,6 +20,10 @@ void create_dropdowns(sfRenderWindow *window, menu_states *menu, all_dropdowns
     new_right(window, &dropdowns->edit_dropdown, "pen", (sfVector2f) {90, 20});
     new_right(window, &dropdowns->edit_dropdown, "eraser",
         (sfVector2f) {90, 40});
+    new_right(window, &dropdowns->edit_dropdown, "flip",
+        (sfVector2f) {90, 60});
+    new_right(window, &dropdowns->edit_dropdown, "invert",
+        (sfVector2f) {90, 80});
 
     new_right(window, &dropdowns->help_dropdown, "help", (sfVector2f) {145, 0});
     new_right(window, &dropdowns->help_dropdown, "about",
