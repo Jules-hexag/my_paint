@@ -5,14 +5,8 @@
 ** create_window
 */
 
-#include <SFML/Graphics.h>
-#include <SFML/Graphics/RenderWindow.h>
-#include <SFML/Graphics/Types.h>
-#include <SFML/Graphics/View.h>
-#include <SFML/System/Vector2.h>
-#include <stdio.h>
-#include "my.h"
 #include "my_paint.h"
+#include "my.h"
 
 static int display_mode(char const *const *env)
 {

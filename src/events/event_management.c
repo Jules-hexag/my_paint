@@ -5,13 +5,6 @@
 ** event_management
 */
 
-#include <SFML/Graphics/RenderWindow.h>
-#include <SFML/Graphics/Types.h>
-#include <SFML/Graphics/View.h>
-#include <SFML/System/Vector2.h>
-#include <SFML/Window/Event.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include "my_paint.h"
 
 static void resize_event(sfEvent event, main_elements_t *main_elms)

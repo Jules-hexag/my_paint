@@ -8,7 +8,6 @@
 #ifndef MY_PAINT_H_
     #define MY_PAINT_H_
 
-    #include <SFML/Graphics/Types.h>
     #include <SFML/Graphics.h>
     #include <stdbool.h>
 

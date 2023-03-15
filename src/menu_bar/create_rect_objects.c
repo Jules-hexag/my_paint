@@ -6,10 +6,6 @@
 */
 
 #include "my_paint.h"
-#include <SFML/Graphics/Color.h>
-#include <SFML/Graphics/RectangleShape.h>
-#include <SFML/Graphics/RenderWindow.h>
-#include <SFML/Graphics/Types.h>
 
 sfRectangleShape *create_menu_button(sfRenderWindow *window,
     linked_dropdown *button)

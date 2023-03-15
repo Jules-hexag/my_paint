@@ -5,23 +5,14 @@
 ** fill_pixels
 */
 
-#include "my_paint.h"
-#include <SFML/Config.h>
-#include <SFML/Graphics/Color.h>
-#include <SFML/Graphics/Image.h>
-#include <SFML/Graphics/Sprite.h>
-#include <SFML/Graphics/Texture.h>
-#include <SFML/Graphics/Types.h>
-#include <SFML/System/Vector2.h>
 #include <math.h>
-#include <stdio.h>
+#include "my_paint.h"
 
 
 static void draw_circle(sfVector2f *pos_mouse, int r, canva_t *canva,
     sfColor color)
 {
     const double PI = 3.1415926535;
-    double i = 0;
     double angle = 0;
     int x1 = 0;
     int y1 = 0;
@@ -31,8 +22,7 @@ static void draw_circle(sfVector2f *pos_mouse, int r, canva_t *canva,
     int y = pos_mouse->y - tl.y - half_r;
 
     while (r > 1) {
-        for (i = 0; i < 360; i += 0.1) {
-            angle = i;
+        for (angle = 0; angle < 360; angle += 0.1) {
             x1 = r * cos(angle * PI / 180);
             y1 = r * sin(angle * PI / 180);
             sfImage_setPixel(canva->image, x + x1, y + y1, color);

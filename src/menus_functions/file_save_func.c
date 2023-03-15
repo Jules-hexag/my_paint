@@ -6,9 +6,6 @@
 */
 
 #include "my_paint.h"
-#include <SFML/Graphics/Image.h>
-#include <SFML/Graphics/Types.h>
-#include <stdio.h>
 
 void save(main_elements_t *main_elements)
 {

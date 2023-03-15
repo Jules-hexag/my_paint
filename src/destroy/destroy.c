@@ -5,13 +5,8 @@
 ** destroy
 */
 
-#include "my_paint.h"
 #include <stdlib.h>
-#include <SFML/Graphics/Image.h>
-#include <SFML/Graphics/RectangleShape.h>
-#include <SFML/Graphics/Sprite.h>
-#include <SFML/Graphics/Text.h>
-#include <SFML/Graphics/Texture.h>
+#include "my_paint.h"
 
 static void destroy_menus(all_dropdowns dropdowns)
 {

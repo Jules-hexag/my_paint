@@ -5,10 +5,6 @@
 ** mouse_clicked_events
 */
 
-#include <SFML/Graphics/RenderWindow.h>
-#include <SFML/Graphics/Types.h>
-#include <SFML/System/Vector2.h>
-#include <stdbool.h>
 #include "my_paint.h"
 
 void (*drpd_bound[3])(sfVector2f pos_mouse, main_elements_t *main_elements) = {

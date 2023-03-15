@@ -6,7 +6,6 @@
 */
 
 #include "my_paint.h"
-#include <SFML/Graphics/Image.h>
 
 void invert(main_elements_t *main_elements)
 {

@@ -6,10 +6,6 @@
 */
 
 #include "my_paint.h"
-#include <SFML/Config.h>
-#include <SFML/Graphics/Image.h>
-#include <SFML/Graphics/Sprite.h>
-#include <SFML/Graphics/Texture.h>
 
 void flip(main_elements_t *main_elements)
 {

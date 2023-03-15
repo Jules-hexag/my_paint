@@ -5,11 +5,6 @@
 ** mouse_events
 */
 
-#include <SFML/Graphics/RenderWindow.h>
-#include <SFML/Graphics/Types.h>
-#include <SFML/System/Vector2.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include "my_paint.h"
 
 static void file_button(linked_dropdown *file_dropdown, sfVector2f pos_mouse)

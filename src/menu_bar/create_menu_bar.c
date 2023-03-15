@@ -6,7 +6,6 @@
 */
 
 #include "my_paint.h"
-#include <SFML/Graphics/Types.h>
 
 sfRectangleShape *create_menu_bar(sfRenderWindow *window,
     all_dropdowns *dropdowns)

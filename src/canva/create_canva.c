@@ -5,13 +5,6 @@
 ** create_canva
 */
 
-#include <SFML/Graphics/Color.h>
-#include <SFML/Graphics/Image.h>
-#include <SFML/Graphics/RectangleShape.h>
-#include <SFML/Graphics/RenderWindow.h>
-#include <SFML/Graphics/Sprite.h>
-#include <SFML/Graphics/Texture.h>
-#include <SFML/Graphics/Types.h>
 #include <stdlib.h>
 #include "my_paint.h"
 

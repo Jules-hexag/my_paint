@@ -6,9 +6,6 @@
 */
 
 #include "my_paint.h"
-#include <SFML/Graphics/RectangleShape.h>
-#include <SFML/Graphics/RenderWindow.h>
-#include <SFML/Graphics/Types.h>
 
 static void draw_elems(sfRenderWindow *window, linked_dropdown *tmp)
 {

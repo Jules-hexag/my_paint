@@ -5,7 +5,6 @@
 ** create_buttons
 */
 
-#include <SFML/System/Vector2.h>
 #include "my_paint.h"
 #include "my.h"
 

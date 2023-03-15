@@ -5,10 +5,6 @@
 ** draw_elements
 */
 
-#include <SFML/Graphics/Color.h>
-#include <SFML/Graphics/RenderWindow.h>
-#include <SFML/Graphics/Types.h>
-#include <stdbool.h>
 #include "my_paint.h"
 #include "my.h"
 
