@@ -10,7 +10,7 @@
 void (*menus_func[7])(main_elements_t *main_elements) = {
     &new,
     NULL,
-    NULL,
+    &save,
     NULL,
     NULL,
     NULL,
@@ -56,7 +56,8 @@ int check_if_in_file_dropdown(sfVector2f pos_mouse,
     (main_elms->dropdowns.file_dropdown->origin.y +
     (main_elms->dropdowns.file_dropdown->size.y * 4))))) {
         int button_index = pos_mouse.y / 20;
-        (button_index == 3) ? menus_func[0](main_elms) : 0;
+        (button_index == 1) ? menus_func[0](main_elms) : 0;
+        (button_index == 3) ? menus_func[2](main_elms) : 0;
     }
     return 0;
 }

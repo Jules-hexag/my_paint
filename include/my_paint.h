@@ -95,6 +95,7 @@ void fill_pixels(canva_t *canva, sfVector2f *pos_mouse);
 /*      DROPDOWNS FUNCTIONS     */
 int check_if_in_file_dropdown(sfVector2f pos_mouse,
     main_elements_t *main_elements);
+void save(main_elements_t *main_elements);
 void new(main_elements_t *main_elements);
 
 int check_if_in_edit_dropdown(sfVector2f pos_mouse, all_dropdowns *dropdowns,
