@@ -41,7 +41,7 @@ LIB 	=	lib/libmy.a
 
 LDFLAGS = 	-L./lib
 
-LDLIBS	=	-lmy -lcriterion -lcsfml-graphics -lcsfml-window -lcsfml-system
+LDLIBS	=	-lmy -lcriterion -lcsfml-graphics -lcsfml-window -lcsfml-system -lm
 
 CFLAGS	=	-I./include -O2 -Wall -Wextra
 
