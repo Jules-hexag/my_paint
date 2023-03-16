@@ -9,6 +9,8 @@
     #define MY_PAINT_H_
 
     #include <SFML/Graphics.h>
+#include <SFML/Graphics/Types.h>
+#include <SFML/System/Vector2.h>
     #include <stdbool.h>
 
 enum {
@@ -52,6 +54,21 @@ typedef struct {
     sfSprite *sprite;
 } canva_t;
 
+typedef struct linked_popup_s {
+    sfRectangleShape *sprite;
+    sfText *text;
+    sfVector2f size;
+    sfVector2f origin;
+    char *name;
+    enum button_state_e button_state;
+    struct linked_popup_s *next;
+} linked_popup;
+
+typedef struct all_popups_s {
+    linked_popup *pen_size;
+    linked_popup *eraser_shape;
+} all_popup;
+
 typedef struct {
     bool pen;
     bool eraser;
@@ -63,8 +80,10 @@ typedef struct {
     menu_states menu;
     canva_t *canva;
     all_dropdowns dropdowns;
+    linked_popup popups;
     selected_tool tool;
     char *filename;
+    int pen_size;
 } main_elements_t;
 
 /*  SOURCE  */
