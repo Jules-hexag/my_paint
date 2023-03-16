@@ -24,28 +24,16 @@ int count_elem(linked_dropdown *head)
     return i;
 }
 
-int new_right_popup(sfRenderWindow *window, linked_popup **head, char *name,
-    sfVector2f origin)
+int count_elem_popup(linked_popup *head)
 {
-    linked_popup *new_node = malloc(sizeof(linked_popup));
-    if (!new_node) return ERROR_RETURN;
-    *new_node = (linked_popup) {
-        .size = (sfVector2f) {50, 20},
-        .origin = origin,
-        .name = name,
-        .button_state = NONE,
-        .next = *head,
-    };
-    new_node->sprite = create_menu_button(window, new_node),
-    new_node->text = create_text((sfVector2f) {origin.x + 2, origin.y + 4},
-        name);
-    new_node->next = NULL;
-    linked_popup *tmp = *head;
-    while (*head != NULL)
-        head = &(*head)->next;
-    *head = new_node;
-    head = &tmp;
-    return 0;
+    int i = 1;
+    if (head == NULL) return 0;
+    if (head->next == NULL) return 1;
+    while (head->next != NULL) {
+        i++;
+        head = head->next;
+    }
+    return i;
 }
 
 static sfText *create_text(sfVector2f pos_text, char *text_str)
@@ -58,6 +46,30 @@ static sfText *create_text(sfVector2f pos_text, char *text_str)
     sfText_setFont(text, font);
     sfText_setPosition(text, pos_text);
     return text;
+}
+
+int new_right_popup(sfRenderWindow *window, linked_popup **head, char *name,
+    sfVector2f origin)
+{
+    linked_popup *new_node = malloc(sizeof(linked_popup));
+    if (!new_node) return ERROR_RETURN;
+    *new_node = (linked_popup) {
+        .size = (sfVector2f) {50, 20},
+        .origin = origin,
+        .name = name,
+        .button_state = NONE,
+        .next = *head,
+    };
+    new_node->sprite = create_menu_button_popup(window, new_node),
+    new_node->text = create_text((sfVector2f) {origin.x + 2, origin.y + 4},
+        name);
+    new_node->next = NULL;
+    linked_popup *tmp = *head;
+    while (*head != NULL)
+        head = &(*head)->next;
+    *head = new_node;
+    head = &tmp;
+    return 0;
 }
 
 /*
@@ -86,11 +98,4 @@ int new_right(sfRenderWindow *window, linked_dropdown **head, char *name,
     *head = new_node;
     head = &tmp;
     return 0;
-}
-
-void pop_first_elem(linked_dropdown **list)
-{
-    linked_dropdown *pop = *list;
-    (*list) = (*list)->next;
-    free(pop);
 }

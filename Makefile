@@ -27,6 +27,7 @@ SRC 	=	src/main.c \
 			src/menus_functions/edit_invert_func.c \
 			src/menu_bar/buttons/create_dropdowns.c \
 			src/menus_functions/check_if_in_dropdown.c \
+			src/events/menu_events/hover_colorization.c \
 			src/events/menu_events/mouse_moved_menu_events.c \
 			src/events/menu_events/mouse_clicked_menu_events.c \
 			src/events/menu_events/check_dropdowns_click_coords.c

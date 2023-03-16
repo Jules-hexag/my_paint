@@ -5,13 +5,13 @@
 ** help
 */
 
-#include <stdio.h>
+#include <unistd.h>
 #include "my_paint.h"
 
 void help(main_elements_t *main_elements)
 {
     (void) main_elements;
-    printf("USAGE:\n\t./my_paint [OPTIONAL]\n\t[OPTIONAL]: optional \
+    write(1, "USAGE:\n\t./my_paint [OPTIONAL]\n\t[OPTIONAL]: optional \
 path --> name and format to save your drawing\n\nFEATURES:\n\t\
 file->new: create a new canva, try to draw, the previous one will be cleared.\
 \n\tfile->save: save your drawing (.jpg by default), you can precise or not\
@@ -23,11 +23,11 @@ help->about: who coded the program.\n\thelp->help: print help.\n\n\
 NOTES:\n\t- Pen is selected by default at the launch of the program.\n\t\
 - For now, only black is managed for the pen tool.\n\t\
 - For now, only one size is managed, it can be changed in the source code \
-(4 pixels radius by default).\n\tCanvas are standardized to 780^2px.");
+(4 pixels radius by default).\n\tCanvas are standardized to 780^2px.", 790);
 }
 
 void about(main_elements_t *main_elements)
 {
     (void) main_elements;
-    printf("matteo.le-pluart@epitech.eu\njules.fradin@epitech.eu\n");
+    write(1, "matteo.le-pluart@epitech.eu\njules.fradin@epitech.eu\n", 53);
 }

@@ -11,4 +11,5 @@ void pen(main_elements_t *main_elements)
 {
     main_elements->tool.eraser = false;
     main_elements->tool.pen = true;
+    main_elements->menu.pen_menu = true;
 }

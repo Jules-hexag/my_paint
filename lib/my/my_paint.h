@@ -23,6 +23,8 @@ typedef struct {
     bool file_menu;
     bool edit_menu;
     bool help_menu;
+    bool pen_menu;
+    bool eraser_menu;
 } menu_states;
 
 enum button_state_e {
@@ -67,7 +69,7 @@ typedef struct linked_popup_s {
 typedef struct all_popups_s {
     linked_popup *pen_size;
     linked_popup *eraser_shape;
-} all_popup;
+} all_popups;
 
 typedef struct {
     bool pen;
@@ -80,7 +82,7 @@ typedef struct {
     menu_states menu;
     canva_t *canva;
     all_dropdowns dropdowns;
-    linked_popup popups;
+    all_popups popups;
     selected_tool tool;
     char *filename;
     int pen_size;
@@ -94,8 +96,12 @@ void frame_loop(main_elements_t *important_elements);
 void destroy(main_elements_t *main_elms);
 
 /*  DRAW ELEMENTS ON WINDOW  */
-void draw_dropdowns_elem(sfRenderWindow *window, all_dropdowns *dropdowns,
-    menu_states *menu);
+void draw_dropdowns_elem(main_elements_t *main_elements);
+void do_hover(sfVector2f pos_mouse, main_elements_t *main_elms);
+void pen_selection(linked_popup *pen, sfVector2f pos_mouse);
+void help_button(linked_dropdown *help_dropdown, sfVector2f pos_mouse);
+void edit_button(linked_dropdown *edit_dropdown, sfVector2f pos_mouse);
+void file_button(linked_dropdown *file_dropdown, sfVector2f pos_mouse);
 
 /*    MENU BAR    */
 sfRectangleShape *create_menu_bar(sfRenderWindow *window,
@@ -103,7 +109,10 @@ sfRectangleShape *create_menu_bar(sfRenderWindow *window,
 sfRectangleShape *create_bar_rectangle(sfRenderWindow *window);
 sfRectangleShape *create_menu_button(sfRenderWindow *window,
     linked_dropdown *button);
+sfRectangleShape *create_menu_button_popup(sfRenderWindow *window,
+    linked_popup *button);
 void create_dropdowns(sfRenderWindow *window, all_dropdowns *dropdowns);
+void create_popups(sfRenderWindow *window, all_popups *popups);
 
 /*      CANVA & DRAWING      */
 canva_t *create_canva_default(void);
@@ -128,10 +137,9 @@ void help(main_elements_t *main_elements);
 void about(main_elements_t *main_elements);
 
 /*      MOUSE EVENT     */
-void mouse_moved_menu_events(sfRenderWindow *window, menu_states *menu,
-    all_dropdowns *dropdowns);
+void mouse_moved_menu_events(main_elements_t *main_elements);
 void mouse_clicked_menu_events(main_elements_t *main_elements);
 void check_dropdowns_click_coords(sfVector2f pos_mouse, menu_states *menu,
-    all_dropdowns *dropdowns);
+    all_dropdowns *dropdowns, main_elements_t *main_elms);
 
 #endif /* !MY_PAINT_H_ */

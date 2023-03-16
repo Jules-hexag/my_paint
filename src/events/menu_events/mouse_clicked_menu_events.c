@@ -25,5 +25,5 @@ void mouse_clicked_menu_events(main_elements_t *main_elms)
     main_elms->menu.help_menu ? drpd_bound[2](pos_mouse, main_elms) : 0;
 
     check_dropdowns_click_coords(pos_mouse, &main_elms->menu,
-        &main_elms->dropdowns);
+        &main_elms->dropdowns, main_elms);
 }
