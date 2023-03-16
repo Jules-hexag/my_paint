@@ -105,7 +105,8 @@ void pen(main_elements_t *main_elements);
 void eraser(main_elements_t *main_elements);
 void flip(main_elements_t *main_elements);
 void invert(main_elements_t *main_elements);
-
+void help(main_elements_t *main_elements);
+void about(main_elements_t *main_elements);
 
 /*      MOUSE EVENT     */
 void mouse_moved_menu_events(sfRenderWindow *window, menu_states *menu,

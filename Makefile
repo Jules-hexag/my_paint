@@ -13,6 +13,7 @@ SRC 	=	src/main.c \
 			src/window/frame_loops.c \
 			src/canva/create_canva.c \
 			src/window/init_window.c \
+			src/menus_functions/help.c \
 			src/window/draw/draw_menus.c \
 			src/events/event_management.c \
 			src/menu_bar/create_menu_bar.c \

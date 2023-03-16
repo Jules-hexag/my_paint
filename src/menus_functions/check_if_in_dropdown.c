@@ -16,8 +16,8 @@ void (*menus_func[9])(main_elements_t *main_elements) = {
     &eraser,
     &flip,
     &invert,
-    NULL,
-    NULL,
+    &about,
+    &help,
 };
 
 void check_if_in_help_dropdown(sfVector2f pos_mouse,
@@ -31,6 +31,9 @@ void check_if_in_help_dropdown(sfVector2f pos_mouse,
     (main_elms->dropdowns.help_dropdown->origin.y +
     (main_elms->dropdowns.help_dropdown->size.y *
     count_elem(main_elms->dropdowns.file_dropdown)))))) {
+        int button_index = pos_mouse.y / 20;
+        if (button_index == 1) menus_func[7](main_elms);
+        if (button_index == 2) menus_func[8](main_elms);
     }
 }
 
