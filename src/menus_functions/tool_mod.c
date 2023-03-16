@@ -19,6 +19,7 @@ void pen_size(main_elements_t *main_elements, int button_index)
 
 void eraser_shape(main_elements_t *main_elements, int button_index)
 {
-    if (button_index == 2) main_elements->eraser_state = ROUND;
+    if (button_index == 2)
+        main_elements->eraser_state = ROUND;
     if (button_index == 3) main_elements->eraser_state = SQUARE;
 }

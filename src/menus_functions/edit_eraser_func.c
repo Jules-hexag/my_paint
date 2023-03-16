@@ -14,6 +14,7 @@ void eraser(main_elements_t *main_elements)
     } else {
         main_elements->menu.eraser_menu = true;
     }
+    main_elements->menu.pen_menu = false;
     main_elements->tool.pen = false;
     main_elements->tool.eraser = true;
 }
