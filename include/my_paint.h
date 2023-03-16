@@ -67,7 +67,7 @@ typedef struct linked_popup_s {
 typedef struct all_popups_s {
     linked_popup *pen_size;
     linked_popup *eraser_shape;
-} all_popup;
+} all_popups;
 
 typedef struct {
     bool pen;

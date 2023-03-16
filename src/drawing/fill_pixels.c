@@ -45,8 +45,8 @@ static int check_if_in_canva(canva_t *canva, sfVector2f *pos_mouse,
     sfVector2f bl = {tl.x, tl.y + canva_len.y};
     if ((pos_mouse->x - tl.x) > 0 && (pos_mouse->x - tr.x) < 0
         && (pos_mouse->y - tl.y) > 0 && (pos_mouse->y - bl.y) < 0) {
-            tool.pen ? draw_circle(pos_mouse, 20, canva, sfBlack) : 0;
-            tool.eraser ? draw_circle(pos_mouse, 20, canva, sfWhite) : 0;
+            tool.pen ? draw_circle(pos_mouse, 4, canva, sfBlack) : 0;
+            tool.eraser ? draw_circle(pos_mouse, 4, canva, sfWhite) : 0;
             sfTexture_updateFromImage(canva->texture, canva->image, 0, 0);
             sfSprite_setTexture(canva->sprite, canva->texture, sfTrue);
             return SUCCESS_RETURN;

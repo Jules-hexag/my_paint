@@ -24,12 +24,12 @@ int count_elem(linked_dropdown *head)
     return i;
 }
 
-int new_left(sfRenderWindow *window, linked_dropdown **head, char *name,
+int new_right_popup(sfRenderWindow *window, linked_popup **head, char *name,
     sfVector2f origin)
 {
-    linked_dropdown *new_node = malloc(sizeof(linked_dropdown));
+    linked_popup *new_node = malloc(sizeof(linked_popup));
     if (!new_node) return ERROR_RETURN;
-    *new_node = (linked_dropdown) {
+    *new_node = (linked_popup) {
         .size = (sfVector2f) {50, 20},
         .origin = origin,
         .name = name,
@@ -37,7 +37,14 @@ int new_left(sfRenderWindow *window, linked_dropdown **head, char *name,
         .next = *head,
     };
     new_node->sprite = create_menu_button(window, new_node),
+    new_node->text = create_text((sfVector2f) {origin.x + 2, origin.y + 4},
+        name);
+    new_node->next = NULL;
+    linked_popup *tmp = *head;
+    while (*head != NULL)
+        head = &(*head)->next;
     *head = new_node;
+    head = &tmp;
     return 0;
 }
 
