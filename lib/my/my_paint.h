@@ -9,8 +9,8 @@
     #define MY_PAINT_H_
 
     #include <SFML/Graphics.h>
-#include <SFML/Graphics/Types.h>
-#include <SFML/System/Vector2.h>
+    #include <SFML/Graphics/Types.h>
+    #include <SFML/System/Vector2.h>
     #include <stdbool.h>
 
 enum {

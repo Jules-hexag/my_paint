@@ -9,7 +9,11 @@
 
 void pen(main_elements_t *main_elements)
 {
+    if (main_elements->menu.pen_menu) {
+        main_elements->menu.pen_menu = false;
+    } else {
+        main_elements->menu.pen_menu = true;
+    }
     main_elements->tool.eraser = false;
     main_elements->tool.pen = true;
-    main_elements->menu.pen_menu = true;
 }
