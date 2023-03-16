@@ -7,9 +7,6 @@
 
 #include "my_paint.h"
 #include "my.h"
-#include <SFML/Graphics/Rect.h>
-#include <SFML/Graphics/Sprite.h>
-#include <SFML/System/Vector2.h>
 
 static int check_coords_help(sfVector2f pos_mouse, menu_states *menu,
     linked_dropdown *help_dropdown)

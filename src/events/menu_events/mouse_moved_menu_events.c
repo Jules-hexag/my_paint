@@ -6,7 +6,6 @@
 */
 
 #include "my_paint.h"
-#include <SFML/System/Vector2.h>
 
 void mouse_moved_menu_events(main_elements_t *main_elms)
 {

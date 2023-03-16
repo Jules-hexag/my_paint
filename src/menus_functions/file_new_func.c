@@ -6,8 +6,6 @@
 */
 
 #include "my_paint.h"
-#include <SFML/Graphics/RenderWindow.h>
-#include <SFML/Graphics/Types.h>
 
 void new(main_elements_t *main_elements)
 {

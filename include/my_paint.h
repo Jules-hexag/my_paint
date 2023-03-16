@@ -104,7 +104,6 @@ void destroy(main_elements_t *main_elms);
 /*  DRAW ELEMENTS ON WINDOW  */
 void draw_dropdowns_elem(main_elements_t *main_elements);
 void do_hover(sfVector2f pos_mouse, main_elements_t *main_elms);
-void pen_selection(linked_popup *pen, sfVector2f pos_mouse);
 void help_button(linked_dropdown *help_dropdown, sfVector2f pos_mouse);
 void edit_button(linked_dropdown *edit_dropdown, sfVector2f pos_mouse);
 void file_button(linked_dropdown *file_dropdown, sfVector2f pos_mouse);

@@ -55,26 +55,9 @@ void help_button(linked_dropdown *help_dropdown, sfVector2f pos_mouse)
     }
 }
 
-void pen_selection(linked_popup *pen, sfVector2f pos_mouse)
-{
-    if ((pos_mouse.x > pen->origin.x && pos_mouse.x <
-        (pen->origin.x + pen->size.x)) && (pos_mouse.y >
-        pen->origin.y && pos_mouse.y <
-        (pen->origin.y + pen->size.y))) {
-            pen->button_state = HOVER;
-            sfRectangleShape_setFillColor(pen->sprite,
-                (sfColor) {107, 0, 40, 255});
-    } else {
-        pen->button_state = NONE;
-        sfRectangleShape_setFillColor(pen->sprite,
-            (sfColor) {107, 107, 107, 255});
-    }
-}
-
 void do_hover(sfVector2f pos_mouse, main_elements_t *main_elms)
 {
     linked_dropdown *tmp = main_elms->dropdowns.file_dropdown;
-    linked_popup *tmp_p = main_elms->popups.pen_size;
     while (tmp != NULL) {
         file_button(tmp, pos_mouse);
         tmp = tmp->next;
@@ -88,9 +71,5 @@ void do_hover(sfVector2f pos_mouse, main_elements_t *main_elms)
     while (tmp != NULL) {
         help_button(tmp, pos_mouse);
         tmp = tmp->next;
-    }
-    while (tmp_p != NULL) {
-        pen_selection(main_elms->popups.pen_size, pos_mouse);
-        tmp_p = tmp_p->next;
     }
 }

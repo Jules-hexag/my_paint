@@ -5,12 +5,7 @@
 ** fill_pixels
 */
 
-#include <SFML/Graphics/Color.h>
-#include <SFML/Graphics/Image.h>
-#include <SFML/Graphics/Types.h>
-#include <SFML/System/Vector2.h>
 #include <math.h>
-#include <stdio.h>
 #include "my_paint.h"
 
 static void draw_square(sfVector2f pos_mouse, int r,

@@ -6,8 +6,6 @@
 */
 
 #include "my_paint.h"
-#include <SFML/Graphics/RenderWindow.h>
-#include <SFML/Graphics/Types.h>
 
 static all_dropdowns init_dropdowns(void)
 {

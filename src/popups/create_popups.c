@@ -7,7 +7,6 @@
 
 #include "my.h"
 #include "my_paint.h"
-#include <SFML/System/Vector2.h>
 
 void create_popups(sfRenderWindow *window, all_popups *popups)
 {
