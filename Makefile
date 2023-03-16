@@ -17,6 +17,7 @@ SRC 	=	src/main.c \
 			src/popups/create_popups.c \
 			src/window/draw/draw_menus.c \
 			src/events/event_management.c \
+			src/menus_functions/tool_mod.c \
 			src/menu_bar/create_menu_bar.c \
 			src/menu_bar/create_rect_objects.c \
 			src/menus_functions/file_new_func.c \
@@ -27,6 +28,7 @@ SRC 	=	src/main.c \
 			src/menus_functions/edit_invert_func.c \
 			src/menu_bar/buttons/create_dropdowns.c \
 			src/menus_functions/check_if_in_dropdown.c \
+			src/menus_functions/check_if_in_tool_drpd.c \
 			src/events/menu_events/hover_colorization.c \
 			src/events/menu_events/mouse_moved_menu_events.c \
 			src/events/menu_events/mouse_clicked_menu_events.c \

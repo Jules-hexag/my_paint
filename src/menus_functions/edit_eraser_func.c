@@ -9,7 +9,11 @@
 
 void eraser(main_elements_t *main_elements)
 {
+    if (main_elements->menu.eraser_menu) {
+        main_elements->menu.eraser_menu = false;
+    } else {
+        main_elements->menu.eraser_menu = true;
+    }
     main_elements->tool.pen = false;
     main_elements->tool.eraser = true;
-    main_elements->menu.eraser_menu = true;
 }

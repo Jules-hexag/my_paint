@@ -77,6 +77,11 @@ typedef struct {
     bool doing;
 } selected_tool;
 
+enum eraser_state_e {
+    ROUND,
+    SQUARE
+};
+
 typedef struct {
     sfRenderWindow *window;
     menu_states menu;
@@ -84,6 +89,7 @@ typedef struct {
     all_dropdowns dropdowns;
     all_popups popups;
     selected_tool tool;
+    enum eraser_state_e eraser_state;
     char *filename;
     int pen_size;
 } main_elements_t;
@@ -116,8 +122,8 @@ void create_popups(sfRenderWindow *window, all_popups *popups);
 
 /*      CANVA & DRAWING      */
 canva_t *create_canva_default(void);
-void draw(sfRenderWindow *window, canva_t *canva, selected_tool tool);
-void fill_pixels(canva_t *canva, sfVector2f *pos_mouse, selected_tool tool);
+void draw(main_elements_t *main_elms);
+void fill_pixels(main_elements_t *main_elements, sfVector2f pos_mouse);
 
 /*      DROPDOWNS FUNCTIONS     */
 void check_if_in_file_dropdown(sfVector2f pos_mouse,
@@ -135,6 +141,14 @@ void flip(main_elements_t *main_elements);
 void invert(main_elements_t *main_elements);
 void help(main_elements_t *main_elements);
 void about(main_elements_t *main_elements);
+
+void check_if_in_pen_dropdown(sfVector2f pos_mouse,
+    main_elements_t *main_elms);
+void check_if_in_erase_dropdown(sfVector2f pos_mouse,
+    main_elements_t *main_elms);
+
+void pen_size(main_elements_t *main_elements, int button_index);
+void eraser_shape(main_elements_t *main_elements, int button_index);
 
 /*      MOUSE EVENT     */
 void mouse_moved_menu_events(main_elements_t *main_elements);

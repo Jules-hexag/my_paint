@@ -36,6 +36,12 @@ static void draw_hidden_dropdowns_buttons_next(main_elements_t *main_elements)
             tmp = tmp->next;
         }
     }
+    if (main_elements->menu.eraser_menu) {
+        linked_popup *tmp = main_elements->popups.eraser_shape;
+        while (tmp != NULL) { draw_elems_popup(main_elements->window, tmp);
+            tmp = tmp->next;
+        }
+    }
 }
 
 static void draw_hidden_dropdowns_buttons(main_elements_t *main_elements)

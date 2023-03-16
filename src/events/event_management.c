@@ -34,8 +34,7 @@ static void mouse_moved_event(sfEvent event, main_elements_t *main_elms)
 {
     if (event.type == sfEvtMouseMoved ||
         event.type == sfEvtMouseButtonReleased) {
-        main_elms->tool.doing ? draw(main_elms->window, main_elms->canva,
-            main_elms->tool) : 0;
+        main_elms->tool.doing ? draw(main_elms) : 0;
         mouse_moved_menu_events(main_elms);
     }
 }

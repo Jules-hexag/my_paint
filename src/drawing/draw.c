@@ -7,11 +7,12 @@
 
 #include "my_paint.h"
 
-void draw(sfRenderWindow *window, canva_t *canva, selected_tool tool)
+void draw(main_elements_t *main_elms)
 {
-    sfVector2i pos_mouse_pix = sfMouse_getPositionRenderWindow(window);
-    sfVector2f pos_mouse = sfRenderWindow_mapPixelToCoords(window,
+    sfVector2i pos_mouse_pix = sfMouse_getPositionRenderWindow(
+        main_elms->window);
+    sfVector2f pos_mouse = sfRenderWindow_mapPixelToCoords(main_elms->window,
         pos_mouse_pix, NULL);
-    fill_pixels(canva, &pos_mouse, tool);
+    fill_pixels(main_elms, pos_mouse);
     return;
 }

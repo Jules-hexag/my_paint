@@ -7,10 +7,12 @@
 
 #include "my_paint.h"
 
-void (*drpd_bound[3])(sfVector2f pos_mouse, main_elements_t *main_elements) = {
+void (*drpd_bound[5])(sfVector2f pos_mouse, main_elements_t *main_elements) = {
     &check_if_in_file_dropdown,
     &check_if_in_edit_dropdown,
     &check_if_in_help_dropdown,
+    &check_if_in_pen_dropdown,
+    &check_if_in_erase_dropdown,
 };
 
 void mouse_clicked_menu_events(main_elements_t *main_elms)
@@ -23,6 +25,8 @@ void mouse_clicked_menu_events(main_elements_t *main_elms)
     main_elms->menu.file_menu ? drpd_bound[0](pos_mouse, main_elms) : 0;
     main_elms->menu.edit_menu ? drpd_bound[1](pos_mouse, main_elms) : 0;
     main_elms->menu.help_menu ? drpd_bound[2](pos_mouse, main_elms) : 0;
+    main_elms->menu.pen_menu ? drpd_bound[3](pos_mouse, main_elms) : 0;
+    main_elms->menu.eraser_menu ? drpd_bound[4](pos_mouse, main_elms) : 0;
 
     check_dropdowns_click_coords(pos_mouse, &main_elms->menu,
         &main_elms->dropdowns, main_elms);
